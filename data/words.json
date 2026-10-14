@@ -1,0 +1,1513 @@
+{
+ "version": 1,
+ "categories": [
+  "animals",
+  "food",
+  "body",
+  "colors",
+  "numbers",
+  "home"
+ ],
+ "words": [
+  {
+   "id": "animal-cat",
+   "category": "animals",
+   "en": "cat",
+   "zh": "猫",
+   "pinyin": "māo",
+   "th": "แมว",
+   "icon": "pictures/twemoji/1f408.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f408.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-dog",
+   "category": "animals",
+   "en": "dog",
+   "zh": "狗",
+   "pinyin": "gǒu",
+   "th": "หมา",
+   "icon": "pictures/twemoji/1f415.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f415.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-bird",
+   "category": "animals",
+   "en": "bird",
+   "zh": "鸟",
+   "pinyin": "niǎo",
+   "th": "นก",
+   "icon": "pictures/twemoji/1f426.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f426.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-fish",
+   "category": "animals",
+   "en": "fish",
+   "zh": "鱼",
+   "pinyin": "yú",
+   "th": "ปลา",
+   "icon": "pictures/twemoji/1f41f.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f41f.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-elephant",
+   "category": "animals",
+   "en": "elephant",
+   "zh": "大象",
+   "pinyin": "dàxiàng",
+   "th": "ช้าง",
+   "icon": "pictures/twemoji/1f418.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f418.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-lion",
+   "category": "animals",
+   "en": "lion",
+   "zh": "狮子",
+   "pinyin": "shīzi",
+   "th": "สิงโต",
+   "icon": "pictures/twemoji/1f981.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f981.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-tiger",
+   "category": "animals",
+   "en": "tiger",
+   "zh": "老虎",
+   "pinyin": "lǎohǔ",
+   "th": "เสือ",
+   "icon": "pictures/twemoji/1f405.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f405.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-monkey",
+   "category": "animals",
+   "en": "monkey",
+   "zh": "猴子",
+   "pinyin": "hóuzi",
+   "th": "ลิง",
+   "icon": "pictures/twemoji/1f412.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f412.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-horse",
+   "category": "animals",
+   "en": "horse",
+   "zh": "马",
+   "pinyin": "mǎ",
+   "th": "ม้า",
+   "icon": "pictures/twemoji/1f40e.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f40e.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-cow",
+   "category": "animals",
+   "en": "cow",
+   "zh": "牛",
+   "pinyin": "niú",
+   "th": "วัว",
+   "icon": "pictures/twemoji/1f404.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f404.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-pig",
+   "category": "animals",
+   "en": "pig",
+   "zh": "猪",
+   "pinyin": "zhū",
+   "th": "หมู",
+   "icon": "pictures/twemoji/1f416.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f416.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-chicken",
+   "category": "animals",
+   "en": "chicken",
+   "zh": "鸡",
+   "pinyin": "jī",
+   "th": "ไก่",
+   "icon": "pictures/twemoji/1f414.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f414.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-duck",
+   "category": "animals",
+   "en": "duck",
+   "zh": "鸭子",
+   "pinyin": "yāzi",
+   "th": "เป็ด",
+   "icon": "pictures/twemoji/1f986.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f986.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-rabbit",
+   "category": "animals",
+   "en": "rabbit",
+   "zh": "兔子",
+   "pinyin": "tùzi",
+   "th": "กระต่าย",
+   "icon": "pictures/twemoji/1f407.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f407.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-mouse",
+   "category": "animals",
+   "en": "mouse",
+   "zh": "老鼠",
+   "pinyin": "lǎoshǔ",
+   "th": "หนู",
+   "icon": "pictures/twemoji/1f401.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f401.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-snake",
+   "category": "animals",
+   "en": "snake",
+   "zh": "蛇",
+   "pinyin": "shé",
+   "th": "งู",
+   "icon": "pictures/twemoji/1f40d.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f40d.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-frog",
+   "category": "animals",
+   "en": "frog",
+   "zh": "青蛙",
+   "pinyin": "qīngwā",
+   "th": "กบ",
+   "icon": "pictures/twemoji/1f438.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f438.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-bear",
+   "category": "animals",
+   "en": "bear",
+   "zh": "熊",
+   "pinyin": "xióng",
+   "th": "หมี",
+   "icon": "pictures/twemoji/1f43b.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f43b.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-panda",
+   "category": "animals",
+   "en": "panda",
+   "zh": "熊猫",
+   "pinyin": "xióngmāo",
+   "th": "แพนด้า",
+   "icon": "pictures/twemoji/1f43c.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f43c.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-giraffe",
+   "category": "animals",
+   "en": "giraffe",
+   "zh": "长颈鹿",
+   "pinyin": "chángjǐnglù",
+   "th": "ยีราฟ",
+   "icon": "pictures/twemoji/1f992.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f992.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-zebra",
+   "category": "animals",
+   "en": "zebra",
+   "zh": "斑马",
+   "pinyin": "bānmǎ",
+   "th": "ม้าลาย",
+   "icon": "pictures/twemoji/1f993.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f993.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-turtle",
+   "category": "animals",
+   "en": "turtle",
+   "zh": "乌龟",
+   "pinyin": "wūguī",
+   "th": "เต่า",
+   "icon": "pictures/twemoji/1f422.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f422.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-butterfly",
+   "category": "animals",
+   "en": "butterfly",
+   "zh": "蝴蝶",
+   "pinyin": "húdié",
+   "th": "ผีเสื้อ",
+   "icon": "pictures/twemoji/1f98b.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f98b.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-ant",
+   "category": "animals",
+   "en": "ant",
+   "zh": "蚂蚁",
+   "pinyin": "mǎyǐ",
+   "th": "มด",
+   "icon": "pictures/twemoji/1f41c.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f41c.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "animal-sheep",
+   "category": "animals",
+   "en": "sheep",
+   "zh": "羊",
+   "pinyin": "yáng",
+   "th": "แกะ",
+   "icon": "pictures/twemoji/1f411.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f411.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-apple",
+   "category": "food",
+   "en": "apple",
+   "zh": "苹果",
+   "pinyin": "píngguǒ",
+   "th": "แอปเปิล",
+   "icon": "pictures/twemoji/1f34e.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f34e.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-banana",
+   "category": "food",
+   "en": "banana",
+   "zh": "香蕉",
+   "pinyin": "xiāngjiāo",
+   "th": "กล้วย",
+   "icon": "pictures/twemoji/1f34c.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f34c.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-orange",
+   "category": "food",
+   "en": "orange",
+   "zh": "橙子",
+   "pinyin": "chéngzi",
+   "th": "ส้ม",
+   "icon": "pictures/twemoji/1f34a.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f34a.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-grapes",
+   "category": "food",
+   "en": "grapes",
+   "zh": "葡萄",
+   "pinyin": "pútao",
+   "th": "องุ่น",
+   "icon": "pictures/twemoji/1f347.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f347.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-watermelon",
+   "category": "food",
+   "en": "watermelon",
+   "zh": "西瓜",
+   "pinyin": "xīguā",
+   "th": "แตงโม",
+   "icon": "pictures/twemoji/1f349.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f349.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-strawberry",
+   "category": "food",
+   "en": "strawberry",
+   "zh": "草莓",
+   "pinyin": "cǎoméi",
+   "th": "สตรอว์เบอร์รี",
+   "icon": "pictures/twemoji/1f353.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f353.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-mango",
+   "category": "food",
+   "en": "mango",
+   "zh": "芒果",
+   "pinyin": "mángguǒ",
+   "th": "มะม่วง",
+   "icon": "pictures/twemoji/1f96d.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f96d.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-pineapple",
+   "category": "food",
+   "en": "pineapple",
+   "zh": "菠萝",
+   "pinyin": "bōluó",
+   "th": "สับปะรด",
+   "icon": "pictures/twemoji/1f34d.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f34d.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-coconut",
+   "category": "food",
+   "en": "coconut",
+   "zh": "椰子",
+   "pinyin": "yēzi",
+   "th": "มะพร้าว",
+   "icon": "pictures/twemoji/1f965.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f965.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-carrot",
+   "category": "food",
+   "en": "carrot",
+   "zh": "胡萝卜",
+   "pinyin": "húluóbo",
+   "th": "แครอท",
+   "icon": "pictures/twemoji/1f955.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f955.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-corn",
+   "category": "food",
+   "en": "corn",
+   "zh": "玉米",
+   "pinyin": "yùmǐ",
+   "th": "ข้าวโพด",
+   "icon": "pictures/twemoji/1f33d.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f33d.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-tomato",
+   "category": "food",
+   "en": "tomato",
+   "zh": "西红柿",
+   "pinyin": "xīhóngshì",
+   "th": "มะเขือเทศ",
+   "icon": "pictures/twemoji/1f345.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f345.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-egg",
+   "category": "food",
+   "en": "egg",
+   "zh": "鸡蛋",
+   "pinyin": "jīdàn",
+   "th": "ไข่",
+   "icon": "pictures/twemoji/1f95a.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f95a.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-rice",
+   "category": "food",
+   "en": "rice",
+   "zh": "米饭",
+   "pinyin": "mǐfàn",
+   "th": "ข้าว",
+   "icon": "pictures/twemoji/1f35a.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f35a.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-bread",
+   "category": "food",
+   "en": "bread",
+   "zh": "面包",
+   "pinyin": "miànbāo",
+   "th": "ขนมปัง",
+   "icon": "pictures/twemoji/1f35e.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f35e.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-milk",
+   "category": "food",
+   "en": "milk",
+   "zh": "牛奶",
+   "pinyin": "niúnǎi",
+   "th": "นม",
+   "icon": "pictures/twemoji/1f95b.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f95b.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-water",
+   "category": "food",
+   "en": "water",
+   "zh": "水",
+   "pinyin": "shuǐ",
+   "th": "น้ำ",
+   "icon": "pictures/twemoji/1f4a7.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f4a7.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-cake",
+   "category": "food",
+   "en": "cake",
+   "zh": "蛋糕",
+   "pinyin": "dàngāo",
+   "th": "เค้ก",
+   "icon": "pictures/twemoji/1f370.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f370.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-ice-cream",
+   "category": "food",
+   "en": "ice cream",
+   "zh": "冰淇淋",
+   "pinyin": "bīngqílín",
+   "th": "ไอศกรีม",
+   "icon": "pictures/twemoji/1f366.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f366.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-noodles",
+   "category": "food",
+   "en": "noodles",
+   "zh": "面条",
+   "pinyin": "miàntiáo",
+   "th": "บะหมี่",
+   "icon": "pictures/twemoji/1f35c.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f35c.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-cookie",
+   "category": "food",
+   "en": "cookie",
+   "zh": "饼干",
+   "pinyin": "bǐnggān",
+   "th": "คุกกี้",
+   "icon": "pictures/twemoji/1f36a.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f36a.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-candy",
+   "category": "food",
+   "en": "candy",
+   "zh": "糖果",
+   "pinyin": "tángguǒ",
+   "th": "ลูกอม",
+   "icon": "pictures/twemoji/1f36c.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f36c.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-cheese",
+   "category": "food",
+   "en": "cheese",
+   "zh": "奶酪",
+   "pinyin": "nǎilào",
+   "th": "ชีส",
+   "icon": "pictures/twemoji/1f9c0.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f9c0.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-juice",
+   "category": "food",
+   "en": "juice",
+   "zh": "果汁",
+   "pinyin": "guǒzhī",
+   "th": "น้ำผลไม้",
+   "icon": "pictures/twemoji/1f9c3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f9c3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "food-potato",
+   "category": "food",
+   "en": "potato",
+   "zh": "土豆",
+   "pinyin": "tǔdòu",
+   "th": "มันฝรั่ง",
+   "icon": "pictures/twemoji/1f954.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f954.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-eye",
+   "category": "body",
+   "en": "eye",
+   "zh": "眼睛",
+   "pinyin": "yǎnjing",
+   "th": "ตา",
+   "icon": "pictures/twemoji/1f441.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f441.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-ear",
+   "category": "body",
+   "en": "ear",
+   "zh": "耳朵",
+   "pinyin": "ěrduo",
+   "th": "หู",
+   "icon": "pictures/twemoji/1f442.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f442.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-nose",
+   "category": "body",
+   "en": "nose",
+   "zh": "鼻子",
+   "pinyin": "bízi",
+   "th": "จมูก",
+   "icon": "pictures/twemoji/1f443.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f443.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-mouth",
+   "category": "body",
+   "en": "mouth",
+   "zh": "嘴",
+   "pinyin": "zuǐ",
+   "th": "ปาก",
+   "icon": "pictures/twemoji/1f444.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f444.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-tongue",
+   "category": "body",
+   "en": "tongue",
+   "zh": "舌头",
+   "pinyin": "shétou",
+   "th": "ลิ้น",
+   "icon": "pictures/twemoji/1f445.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f445.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-hand",
+   "category": "body",
+   "en": "hand",
+   "zh": "手",
+   "pinyin": "shǒu",
+   "th": "มือ",
+   "icon": "pictures/twemoji/270b.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 270b.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-foot",
+   "category": "body",
+   "en": "foot",
+   "zh": "脚",
+   "pinyin": "jiǎo",
+   "th": "เท้า",
+   "icon": "pictures/twemoji/1f9b6.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f9b6.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-leg",
+   "category": "body",
+   "en": "leg",
+   "zh": "腿",
+   "pinyin": "tuǐ",
+   "th": "ขา",
+   "icon": "pictures/twemoji/1f9b5.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f9b5.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-tooth",
+   "category": "body",
+   "en": "tooth",
+   "zh": "牙齿",
+   "pinyin": "yáchǐ",
+   "th": "ฟัน",
+   "icon": "pictures/twemoji/1f9b7.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f9b7.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-arm",
+   "category": "body",
+   "en": "arm",
+   "zh": "胳膊",
+   "pinyin": "gēbo",
+   "th": "แขน",
+   "icon": "pictures/twemoji/1f4aa.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f4aa.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-heart",
+   "category": "body",
+   "en": "heart",
+   "zh": "心",
+   "pinyin": "xīn",
+   "th": "หัวใจ",
+   "icon": "pictures/twemoji/2764.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 2764.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "body-brain",
+   "category": "body",
+   "en": "brain",
+   "zh": "大脑",
+   "pinyin": "dànǎo",
+   "th": "สมอง",
+   "icon": "pictures/twemoji/1f9e0.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f9e0.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-red",
+   "category": "colors",
+   "en": "red",
+   "zh": "红色",
+   "pinyin": "hóngsè",
+   "th": "สีแดง",
+   "icon": "pictures/twemoji/1f534.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f534.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-blue",
+   "category": "colors",
+   "en": "blue",
+   "zh": "蓝色",
+   "pinyin": "lánsè",
+   "th": "สีน้ำเงิน",
+   "icon": "pictures/twemoji/1f535.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f535.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-green",
+   "category": "colors",
+   "en": "green",
+   "zh": "绿色",
+   "pinyin": "lǜsè",
+   "th": "สีเขียว",
+   "icon": "pictures/twemoji/1f7e2.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e2.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-yellow",
+   "category": "colors",
+   "en": "yellow",
+   "zh": "黄色",
+   "pinyin": "huángsè",
+   "th": "สีเหลือง",
+   "icon": "pictures/twemoji/1f7e1.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e1.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-orange",
+   "category": "colors",
+   "en": "orange",
+   "zh": "橙色",
+   "pinyin": "chéngsè",
+   "th": "สีส้ม",
+   "icon": "pictures/twemoji/1f7e0.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e0.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-purple",
+   "category": "colors",
+   "en": "purple",
+   "zh": "紫色",
+   "pinyin": "zǐsè",
+   "th": "สีม่วง",
+   "icon": "pictures/twemoji/1f7e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-brown",
+   "category": "colors",
+   "en": "brown",
+   "zh": "棕色",
+   "pinyin": "zōngsè",
+   "th": "สีน้ำตาล",
+   "icon": "pictures/twemoji/1f7e4.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e4.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-black",
+   "category": "colors",
+   "en": "black",
+   "zh": "黑色",
+   "pinyin": "hēisè",
+   "th": "สีดำ",
+   "icon": "pictures/twemoji/26ab.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 26ab.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-white",
+   "category": "colors",
+   "en": "white",
+   "zh": "白色",
+   "pinyin": "báisè",
+   "th": "สีขาว",
+   "icon": "pictures/twemoji/26aa.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 26aa.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "color-pink",
+   "category": "colors",
+   "en": "pink",
+   "zh": "粉红色",
+   "pinyin": "fěnhóngsè",
+   "th": "สีชมพู",
+   "icon": "pictures/twemoji/1fa77.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1fa77.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-one",
+   "category": "numbers",
+   "en": "one",
+   "zh": "一",
+   "pinyin": "yī",
+   "th": "หนึ่ง",
+   "icon": "pictures/twemoji/31-20e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 31-20e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-two",
+   "category": "numbers",
+   "en": "two",
+   "zh": "二",
+   "pinyin": "èr",
+   "th": "สอง",
+   "icon": "pictures/twemoji/32-20e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 32-20e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-three",
+   "category": "numbers",
+   "en": "three",
+   "zh": "三",
+   "pinyin": "sān",
+   "th": "สาม",
+   "icon": "pictures/twemoji/33-20e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 33-20e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-four",
+   "category": "numbers",
+   "en": "four",
+   "zh": "四",
+   "pinyin": "sì",
+   "th": "สี่",
+   "icon": "pictures/twemoji/34-20e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 34-20e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-five",
+   "category": "numbers",
+   "en": "five",
+   "zh": "五",
+   "pinyin": "wǔ",
+   "th": "ห้า",
+   "icon": "pictures/twemoji/35-20e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 35-20e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-six",
+   "category": "numbers",
+   "en": "six",
+   "zh": "六",
+   "pinyin": "liù",
+   "th": "หก",
+   "icon": "pictures/twemoji/36-20e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 36-20e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-seven",
+   "category": "numbers",
+   "en": "seven",
+   "zh": "七",
+   "pinyin": "qī",
+   "th": "เจ็ด",
+   "icon": "pictures/twemoji/37-20e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 37-20e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-eight",
+   "category": "numbers",
+   "en": "eight",
+   "zh": "八",
+   "pinyin": "bā",
+   "th": "แปด",
+   "icon": "pictures/twemoji/38-20e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 38-20e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-nine",
+   "category": "numbers",
+   "en": "nine",
+   "zh": "九",
+   "pinyin": "jiǔ",
+   "th": "เก้า",
+   "icon": "pictures/twemoji/39-20e3.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 39-20e3.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "number-ten",
+   "category": "numbers",
+   "en": "ten",
+   "zh": "十",
+   "pinyin": "shí",
+   "th": "สิบ",
+   "icon": "pictures/twemoji/1f51f.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f51f.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-house",
+   "category": "home",
+   "en": "house",
+   "zh": "房子",
+   "pinyin": "fángzi",
+   "th": "บ้าน",
+   "icon": "pictures/twemoji/1f3e0.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f3e0.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-door",
+   "category": "home",
+   "en": "door",
+   "zh": "门",
+   "pinyin": "mén",
+   "th": "ประตู",
+   "icon": "pictures/twemoji/1f6aa.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f6aa.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-window",
+   "category": "home",
+   "en": "window",
+   "zh": "窗户",
+   "pinyin": "chuānghu",
+   "th": "หน้าต่าง",
+   "icon": "pictures/twemoji/1fa9f.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1fa9f.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-bed",
+   "category": "home",
+   "en": "bed",
+   "zh": "床",
+   "pinyin": "chuáng",
+   "th": "เตียง",
+   "icon": "pictures/twemoji/1f6cf.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f6cf.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-chair",
+   "category": "home",
+   "en": "chair",
+   "zh": "椅子",
+   "pinyin": "yǐzi",
+   "th": "เก้าอี้",
+   "icon": "pictures/twemoji/1fa91.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1fa91.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-sofa",
+   "category": "home",
+   "en": "sofa",
+   "zh": "沙发",
+   "pinyin": "shāfā",
+   "th": "โซฟา",
+   "icon": "pictures/twemoji/1f6cb.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f6cb.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-toilet",
+   "category": "home",
+   "en": "toilet",
+   "zh": "马桶",
+   "pinyin": "mǎtǒng",
+   "th": "โถส้วม",
+   "icon": "pictures/twemoji/1f6bd.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f6bd.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-bathtub",
+   "category": "home",
+   "en": "bathtub",
+   "zh": "浴缸",
+   "pinyin": "yùgāng",
+   "th": "อ่างอาบน้ำ",
+   "icon": "pictures/twemoji/1f6c1.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f6c1.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-light-bulb",
+   "category": "home",
+   "en": "light bulb",
+   "zh": "灯泡",
+   "pinyin": "dēngpào",
+   "th": "หลอดไฟ",
+   "icon": "pictures/twemoji/1f4a1.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f4a1.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-key",
+   "category": "home",
+   "en": "key",
+   "zh": "钥匙",
+   "pinyin": "yàoshi",
+   "th": "กุญแจ",
+   "icon": "pictures/twemoji/1f511.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f511.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-alarm-clock",
+   "category": "home",
+   "en": "alarm clock",
+   "zh": "闹钟",
+   "pinyin": "nàozhōng",
+   "th": "นาฬิกาปลุก",
+   "icon": "pictures/twemoji/23f0.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 23f0.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-television",
+   "category": "home",
+   "en": "television",
+   "zh": "电视",
+   "pinyin": "diànshì",
+   "th": "โทรทัศน์",
+   "icon": "pictures/twemoji/1f4fa.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f4fa.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-phone",
+   "category": "home",
+   "en": "phone",
+   "zh": "手机",
+   "pinyin": "shǒujī",
+   "th": "โทรศัพท์มือถือ",
+   "icon": "pictures/twemoji/1f4f1.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f4f1.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-book",
+   "category": "home",
+   "en": "book",
+   "zh": "书",
+   "pinyin": "shū",
+   "th": "หนังสือ",
+   "icon": "pictures/twemoji/1f4d6.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f4d6.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-scissors",
+   "category": "home",
+   "en": "scissors",
+   "zh": "剪刀",
+   "pinyin": "jiǎndāo",
+   "th": "กรรไกร",
+   "icon": "pictures/twemoji/2702.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 2702.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-broom",
+   "category": "home",
+   "en": "broom",
+   "zh": "扫帚",
+   "pinyin": "sàozhou",
+   "th": "ไม้กวาด",
+   "icon": "pictures/twemoji/1f9f9.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f9f9.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-soap",
+   "category": "home",
+   "en": "soap",
+   "zh": "肥皂",
+   "pinyin": "féizào",
+   "th": "สบู่",
+   "icon": "pictures/twemoji/1f9fc.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f9fc.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  },
+  {
+   "id": "home-umbrella",
+   "category": "home",
+   "en": "umbrella",
+   "zh": "伞",
+   "pinyin": "sǎn",
+   "th": "ร่ม",
+   "icon": "pictures/twemoji/2602.svg",
+   "source": {
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 2602.svg, CC-BY 4.0",
+    "zh_pinyin": "DRAFT by Claude Code; NOT yet checked against CC-CEDICT (tools/check_cedict.py)",
+    "en_th": "DRAFT by Claude Code"
+   },
+   "reviewed": false
+  }
+ ]
+}

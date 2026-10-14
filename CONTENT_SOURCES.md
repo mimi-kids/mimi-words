@@ -1,0 +1,127 @@
+# Content sources
+
+## Pictures - Twemoji
+
+- Source: Twemoji v15.1.0, community-maintained fork https://github.com/jdecked/twemoji
+- Fetched 2026-10-14 from `https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/<codepoint>.svg`
+  (only the 100 files below; no other network use).
+- License (graphics): **CC-BY 4.0**, https://creativecommons.org/licenses/by/4.0/
+  Copyright 2019 Twitter, Inc and other contributors; 2024 onwards jdecked/twemoji contributors.
+- Attribution is shown in the app (Credits screen). Files are unmodified.
+
+## Words
+
+- English (`en`) and Thai (`th`): drafted by Claude Code, `reviewed: false`. The owner is the reviewer.
+- Chinese (`zh`, simplified) and `pinyin` (tone-marked): **DRAFTED by Claude Code, NOT yet checked against
+  CC-CEDICT.** The brief asks for CC-CEDICT (CC BY-SA 4.0, https://www.mdbg.net/chinese/dictionary?page=cc-cedict)
+  as the source, but downloading it was outside the network allowance of the brief. To check:
+  download `cedict_1_0_ts_utf-8_mdbg.txt.gz` from that page, then run
+  `python3 tools/check_cedict.py <path-to-cedict.txt.gz>`; it reports, per word, whether the headword exists
+  and whether the pinyin matches a CC-CEDICT reading. If CC-CEDICT data is copied into this repo later, that
+  file is CC BY-SA 4.0 and must carry its attribution and license.
+- No record is marked `reviewed: true`; only the owner may do that.
+
+## Picture files (sha256)
+
+| File | sha256 |
+|---|---|
+| 1f33d.svg | f9e206caef297d521a5b47c1bf560312ff66050eabec9502f07674b66da428e1 |
+| 1f345.svg | 4f88e52dc73fa86a88747dec7243d38e0bdd263400c29ac6bd0786cba71768f4 |
+| 1f347.svg | 11609fd2874433e3bc5fac02b56cbb1f9bdab6f856aa108fd5deac601fb95a4d |
+| 1f349.svg | ba4326afe4f23fbe9ab7bbee8dece542bb85cc92f697dbebbb1f3bc78fae1ef2 |
+| 1f34a.svg | f9806aebac632973570632862ce5c2b8ecb588bed24a5c0ba1c5f3316c43c598 |
+| 1f34c.svg | 27f2f433eb1084f3728a430bd72c8891819a45396354d89ab496a5afce76e6e4 |
+| 1f34d.svg | e27f52c7e0cbe83939a6a52e9eb9385f938c8ef8ab129d01ab7221cbd5537ed9 |
+| 1f34e.svg | b55a6ab3403f37e8404dab174ed26b5997f48a67df2ac317c442b86916343d3e |
+| 1f353.svg | 8fc89f2be1a50a72d5c44f28d2f84b642f7065bc4f97c6540ee3ae86d2eda2fc |
+| 1f35a.svg | 4cdea01f8b856397d0769c98e98ff91b21c941da5557ea6e02851f4f8ecead0a |
+| 1f35c.svg | ca3c9d33c09d268774a9f1aae62f7b8bdf5dc0c2c71634bca20931e413c4b073 |
+| 1f35e.svg | e4854fc34fa77c36e266eb9d7fe2b658d281d0adea7754a1994f238192a6269b |
+| 1f366.svg | d7ac9b50cc187c218801caddbc1a9b728022c5c00f44a3bd2cd0920af808bc5f |
+| 1f36a.svg | 88724da3173eaf855fc8b8094480d1d923f69c420107501da8d40b503163bcf2 |
+| 1f36c.svg | f63e8881aa5a91bcbb208d40f8236dff8ed953f4a5254ac435fd61369b4be573 |
+| 1f370.svg | ab54ce36cb1dc1395ca8aeacff356a78e8dc82f854fa0275fb4f963b434f5b12 |
+| 1f3e0.svg | 914fdd0d0eecc2c3c9a1c960a44201845256498e236e1dfadb109b14e6cf0097 |
+| 1f401.svg | e92c81d0ebb0224b43a552386602d8a41dc3e6220514b4d365495025bdedfbf0 |
+| 1f404.svg | 91749a903f15edb113b92edafda8dd70f9e9bd1bee49cfb9b8bbe500a8881020 |
+| 1f405.svg | 99e45ff69c027c505be5bd26a3ec6159505a880686f040ccabe9ede004a748ee |
+| 1f407.svg | 3d1e7029bea8b6cf2d550d4810e5ce11c1f50d8df1c22a45c9e0dff8e9694db3 |
+| 1f408.svg | d292efbd5e00fcf7c8aee855a5ec5846553236dd8e6c28777832a82fb04d578c |
+| 1f40d.svg | 0b5464f87e1571fffee05d254c8fe1cf1f880c20d8a8c100b942537606dab54b |
+| 1f40e.svg | a61f892c6c36484a9477978c2fe5ba0b7ee0c0c63da5a5f2cf4ee6884c18db59 |
+| 1f411.svg | 23d57bfbd45dd5c58a6762db275b4eade1a98b613b34f04877128ad2dfecf36b |
+| 1f412.svg | b4544110be26cf10e8b486633f7cf5e5c7483373deb740de5ce131dfc014c6a6 |
+| 1f414.svg | 38184b07b552b5f7bf76cad78bf4dab2a9fcc16800c51596a1a93f9b2abc03a3 |
+| 1f415.svg | 632fc09dba15d0701ede125193205b9f0968ba54927166e851a20c6f431965e2 |
+| 1f416.svg | 0ff3bbb78d83d494ac21abbc63e95f1db5ea594c82f8efe4e3b08cf85d104642 |
+| 1f418.svg | b23f4d2146dcf07d2dc7fc72d206788581f0ec8c5979a2704ad93d772bc83682 |
+| 1f41c.svg | b7cfb5d596c82ab8d4c8af0e0f7cf7715bb644f0692bded2ab6e9c181c16dd1f |
+| 1f41f.svg | caa8008ee6dbae76478943d4d233519d362e75858f9c9928090b5928cda3b2d8 |
+| 1f422.svg | c79bb7aa13c847aead252a730ab44f5e631d8409569717b963d1f0f476252342 |
+| 1f426.svg | ea01099badc833d30fdf08ea3a117b2e5e3cc270a31c6be89abdce42c2a69322 |
+| 1f438.svg | 82f93e8eec264c4c0f1c932e61b80735904d8f853cbfabd80965576deb827d41 |
+| 1f43b.svg | 01203c85604edcc900adab2c45324174e6771db767345d53aebd0469a4c21a5a |
+| 1f43c.svg | f62d0a2b082c192743e4ea6e3ec841c76efb17fe882c068e00d5264e9ad42128 |
+| 1f441.svg | 4cb5bebe92bb24bcc94a8d70d30872651c6b33e146c839e746927e3ce4a5d532 |
+| 1f442.svg | 04eb0ebe1848d9b628fbc435f45e15dab6f01422fd064b798d447a8908c9c322 |
+| 1f443.svg | c19afe0f18a097f540fb8c4192129a0174161afd9589965020b8135caf959710 |
+| 1f444.svg | 033caa64a2f2dbe91f16210f2d9912949d30eb0cd097dc52cdf90d6ff63bdd8c |
+| 1f445.svg | 7ba3e8cfbd718c54aeaf8b78b8487552f08f520d1d0653a18860f46d428074e9 |
+| 1f4a1.svg | 2cd037cce2c3c16c3d33b1fbe4d9d46206633af2f8b4e082cea209c56a3e8b56 |
+| 1f4a7.svg | 9ec35e46c27db799e43a08bd2a3c4353d51a0c037f8bdbbc63684f7fefbb0cc0 |
+| 1f4aa.svg | 9abe6b1f8f8e8903d93e62630394568dbbd09e4fdad84026e2374f3935d5d25f |
+| 1f4d6.svg | 78f4d87e4e97c7ab24215a1a04cf9093a1a7556709e00c2e65543ad21e54413d |
+| 1f4f1.svg | 331d62f00a03f10e07dc3a7660891469b6b76e57d78b57a865645a5ae5378486 |
+| 1f4fa.svg | 7f8739611bef5e30d579db0b3783d260cc84bb38e9b3b0f51b566c04d1303564 |
+| 1f511.svg | 8134ea8a0d84b021a3d597d6a697139a78dc31250de036432f23e2207a7fb3d2 |
+| 1f51f.svg | c186ccc66c9fbe188413f5ff1b0664ad85c8f6921626819f954fa7b4e442b460 |
+| 1f534.svg | 93f28a18a1df638b539f6bde99c048a50ad7b8a5643c6966a0546a0c50f7cace |
+| 1f535.svg | b44a2fe208e998b56df46211e07ab012140f047e0b0621ab6b4f17ba434bfca5 |
+| 1f6aa.svg | 19e3a07fb16d79e5ff225ce303bc5ac1343a2aa0188edc1795b1edbf9c566dfe |
+| 1f6bd.svg | 9572d0b51b696deeb679fb45f3ef0b823ac7a6fe100605d9b5c4a87cbde48a79 |
+| 1f6c1.svg | 6d7c12fc386d73d1d83bfa30d66c4ca74e1a48adbd93c3d9c6cb3f888c48dbd4 |
+| 1f6cb.svg | 7a4d0389d1f196ad9e3b979946b96c85a49bd6023d19706b202d360fabcd45df |
+| 1f6cf.svg | dcc1fb41f2bf8d3a50e19e200cc288725d2b3f2190de8f3b50714e16ebb3b366 |
+| 1f7e0.svg | edbbfc60c4e56c0a6db909bc7e4c2c52328b78ba41db4c3e3b2bf6f5dead1f12 |
+| 1f7e1.svg | 35f13b37effb45365808667e08dec3034ca79d587a5343f665c5e53c29345907 |
+| 1f7e2.svg | 66b1c8e22d1f5804ed048c6a1f5fe5d4210c274967d4f7f42e595851d6cd9f47 |
+| 1f7e3.svg | 00eb4fd626a45406019ccd498762d5ab0872c525bf9289f3a3775e8040504be3 |
+| 1f7e4.svg | 35a561b69f60e18dd37f6e6d5c1843a93c6b074f807ec84d0b86d59648f58094 |
+| 1f954.svg | 70f46bb22acc8e9944843d6fcaf4813f10f49fd828a3a026e4fb1e5652008abf |
+| 1f955.svg | 095282c0ebfd6b8fd35cdad033cec807db20afa8a2558e3ebbc038670efd73c5 |
+| 1f95a.svg | 26d7a3741923d3f0faafa00443364be1fdb73c4b4a8797700f74d008b5d52408 |
+| 1f95b.svg | c8ccfa1c7f95623f15b390298fee4d328c7f45d312fcb95e49623c1282c4d655 |
+| 1f965.svg | b43d2f0bfc2be24eb0cb39819c505f4cbd59b525e94828bb0824a4ae406ac04a |
+| 1f96d.svg | 0ee93dec9d72a8fbb747400746b31a003e33ef1ef2066dcf1280a4e8c0d86035 |
+| 1f981.svg | bd269f15a1e303fda5c87a4ff92f3e981a4ed5c4eab175393a73897d714c5f84 |
+| 1f986.svg | 74114f0e02acbd2a91b55f72e597c27d5c8da1fe2d03910ccd17a5180102c89b |
+| 1f98b.svg | 6ce1f664bbdfbcf69732b00f55cc257469a26c115b8891526193e0ea837f836a |
+| 1f992.svg | 07a63c7cec7bf62f111d9967e3fd519a90c5148204e1cd99fc1811bba48ce9a9 |
+| 1f993.svg | 303de99b0b43eeaf599b59598588e5805f0c59ced55462bb128f93030172185a |
+| 1f9b5.svg | 9e1120c60d9de70ed4da95a3c06f5697ac5d9f7f62d37e239df27ef1fc2dac52 |
+| 1f9b6.svg | 5e1ccee0e5ef0c0cac343fe9368c0fe8fac5eae7cfc2a22aabdb080cf4bda161 |
+| 1f9b7.svg | aa42bdf414ecb7d63a87ce2e30ec71c3ee5664115badce8e4e17d20d2c4a2317 |
+| 1f9c0.svg | 12d7cc96a5ea9d9156111287ad37fe7f6307e22c9edcf142d749cbecee3d1371 |
+| 1f9c3.svg | f569800d9e3f165e6d38443c0bf8a3c28624667b2e8877c090086d45d079e4c6 |
+| 1f9e0.svg | 74941007c155caffc21e0cf1da9935688adc5a13b49704a69d1c8b682ae81293 |
+| 1f9f9.svg | 95670746ab05c2c486434a13fea927c3dae244c7c326923f851991a4cc2acd26 |
+| 1f9fc.svg | f6a74ac3871e6c2b2011119bc7a9c9c4132723a98ea9908eba51c1a85cdff894 |
+| 1fa77.svg | 90bb4c852f0e6c7a269299d41ac1d527b5e268d810e1e4645ea5dabf69af185e |
+| 1fa91.svg | a910cd884c5ffb702780be0be00aa856118499148024f581e5d5184c99328d66 |
+| 1fa9f.svg | 08e11fb5ea5fee8af5ff91d3f21e5d246dce69c078ef7d00e64b72156f82cf28 |
+| 23f0.svg | 9261f80678e69407d7626915cbff3020581891e16c039fc7aa207228a21b2832 |
+| 2602.svg | ddf02be76a01886fbf17c77ffc58bdae52d6abf9c9481e6ad3207575507933e6 |
+| 26aa.svg | 2b3db84b20166284b6710898a39baecd15db929f5a42ff89603d9a4076638764 |
+| 26ab.svg | 19db983a0eb045f757dc9593ac7a083c412eb682463f50d39c46358fdf17f5c6 |
+| 2702.svg | e73badc50626dc25aa1aaf83d602eb41b098ecce417cc59ef4e55936bda792d3 |
+| 270b.svg | 76637c8dd1c4dbfb6ead5b20a79244fd94e38b7ce90a1f728ff647ac46d88ec9 |
+| 2764.svg | 09a743ee0c32ca57c9be64b13b29c396310d1dd309cb4d7d3be722e47db95f27 |
+| 31-20e3.svg | eb87966d6bb5e4869b7605181665130326730e86a82aef4591371fe6dc57f42a |
+| 32-20e3.svg | 4fcefc30ccef0288ff52fdb3b45219eeac803bb2d9b3d245a11abd1051d86777 |
+| 33-20e3.svg | 19127cfc50dbe86b0cd8d00ab7003612aac803aa30ef966582d260d1224dcd04 |
+| 34-20e3.svg | dc5991245d533ae7e487d376571456b30077f4edd2cfb3205a308fdcc4c310bb |
+| 35-20e3.svg | 1d5e2177d83019a263e2d4d98d580518341b0e4fa89f1a6e2817dfb2bfa01620 |
+| 36-20e3.svg | 77fbf9fac74e8488261d3e8eef4599ef8ed93ba1dfb5a10626f25bb3c114f7ca |
+| 37-20e3.svg | 32e3b0ce78490fa0464599111b37188647021f08d4010fa73737ed73e52d27ac |
+| 38-20e3.svg | de8d383c6ba3f14ec77377d027eb919e65d9c8f6c677e530127389be670a7553 |
+| 39-20e3.svg | 94e514c9f7aeaa59a865a291f661b99d4303551edcbaa84c875855d3062dfbfa |
