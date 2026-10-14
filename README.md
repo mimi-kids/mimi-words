@@ -53,11 +53,20 @@ Latest results: `evidence/unit-tests.txt`, `evidence/smoke-tests.txt`.
 - **All words and category labels are drafts (`reviewed: false`)**; the owner reviews them with `REVIEW.md`.
 - Pictures: Twemoji 15.1.0, CC-BY 4.0, credited in the app; sources and hashes in `CONTENT_SOURCES.md`.
 
+## License
+
+- **Code** (HTML, CSS, JavaScript, tools, tests): MIT, see `LICENSE` (copyright 2026 mimi-kids).
+- **Word lists and Thai translations** (`data/words.json`, `REVIEW.md`): CC BY 4.0,
+  https://creativecommons.org/licenses/by/4.0/ (attribution: mimi-kids).
+- **Pictures** (`pictures/twemoji/`): Twemoji 15.1.0, CC-BY 4.0, (c) Twitter, Inc and other contributors;
+  see `CONTENT_SOURCES.md`. Unmodified.
+- CC-CEDICT was used only to check the Chinese words and pinyin; no CC-CEDICT data is included.
+
 ## AI role / owner role
 
 | Who | Role |
 |---|---|
-| Owner | Requirements; content review (every word, picture choice and label); testing on real phones; release decision; license choice |
+| Owner | Requirements; content review (every word, picture choice and label); testing on real phones; release decision |
 | Claude Code | Implementation (code, data drafts, tests, this README) |
 | Codex | Independent code review - **not yet done** |
 
@@ -79,5 +88,4 @@ Latest results: `evidence/unit-tests.txt`, `evidence/smoke-tests.txt`.
 - Progress is per device and per browser; clearing site data deletes it. Private browsing keeps it only
   until the tab closes.
 - Accessibility: buttons have Thai/English labels for screen readers, but no screen-reader testing yet.
-- No LICENSE file yet (owner decides).
 - No independent (Codex) review yet.
