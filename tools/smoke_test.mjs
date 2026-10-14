@@ -15,7 +15,7 @@ const results = [];
 const check = (name, ok, detail = '') => { results.push({ name, ok }); console.log(`${ok ? 'ok  ' : 'FAIL'} ${name} ${detail}`); };
 
 const server = spawn('python3', ['-m', 'http.server', String(PORT), '--bind', '127.0.0.1'], { cwd: ROOT, stdio: 'ignore' });
-const profile = mkdtempSync(join(tmpdir(), 'lingolite-chrome-'));
+const profile = mkdtempSync(join(tmpdir(), 'mimi-chrome-'));
 const chrome = spawn('google-chrome', ['--headless=new', `--remote-debugging-port=${DEBUG}`, `--user-data-dir=${profile}`,
   '--no-first-run', '--no-default-browser-check', '--window-size=412,915', 'about:blank'], { stdio: 'ignore' });
 
@@ -117,7 +117,7 @@ try {
   await evaluate("document.getElementById('back').click()");
 
   check('service worker active', await waitFor("navigator.serviceWorker.ready.then(r => !!r.active)", 15000));
-  const cached = await evaluate("caches.open('lingolite-v6').then(c => c.keys()).then(k => k.length)");
+  const cached = await evaluate("caches.open('mimi-v7').then(c => c.keys()).then(k => k.length)");
   check('precache has shell + 100 pictures', cached >= 110, `(${cached} entries)`);
 
   await cdp('Network.emulateNetworkConditions', { offline: true, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });

@@ -1,4 +1,4 @@
-// LingoLite - picture-first words for children (Thai speakers) learning English and Chinese.
+// Mimi - picture-first words for children (Thai speakers) learning English and Chinese.
 // Vanilla JS, no dependencies, no network calls besides loading its own files. Logic lives in logic.js.
 (function () {
   'use strict';

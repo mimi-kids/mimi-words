@@ -1,4 +1,4 @@
-// LingoLite pure logic: rounds, distractors, progress, review queue, streak, storage.
+// Mimi pure logic: rounds, distractors, progress, review queue, streak, storage.
 // No DOM. Loaded as a plain <script> in the browser (window.LingoLogic) and with require() in tests.
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();

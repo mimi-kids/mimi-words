@@ -1,6 +1,6 @@
-// LingoLite service worker: precache everything on install, then serve cache-first (works offline).
+// Mimi service worker: precache everything on install, then serve cache-first (works offline).
 // Bump CACHE when any file changes so clients pick up the new version.
-var CACHE = 'lingolite-v6';
+var CACHE = 'mimi-v7';
 var SHELL = [
   './',
   'index.html',

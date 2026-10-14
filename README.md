@@ -1,4 +1,4 @@
-# LingoLite (working name)
+# Mimi
 
 Picture-first vocabulary app for children who speak Thai and are learning English and Mandarin.
 The language toggle (ABC / 中文) chooses the language for everything; Thai is a small helper only.
@@ -74,6 +74,8 @@ Latest results: `evidence/unit-tests.txt`, `evidence/smoke-tests.txt`.
 - Four pictures are stand-ins, flagged in `REVIEW.md`: water (droplet), arm (flexed biceps), heart (symbol),
   pink (pink heart).
 - The streak uses the device's local date; changing the device clock changes it.
+- Storage keys keep the old working name (`lingolite.v1` / `lingolite.v2`) so existing progress survives the
+  rename to Mimi.
 - Progress is per device and per browser; clearing site data deletes it. Private browsing keeps it only
   until the tab closes.
 - Accessibility: buttons have Thai/English labels for screen readers, but no screen-reader testing yet.

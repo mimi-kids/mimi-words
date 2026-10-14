@@ -1,147 +1,147 @@
-# node --test tests/   (v22.23.3, 2026-10-14T09:03:57Z)
+# node --test tests/   (v22.23.3, 2026-10-14T09:30:20Z)
 TAP version 13
 # Subtest: exactly 100 records
 ok 1 - exactly 100 records
   ---
-  duration_ms: 1.176664
+  duration_ms: 1.55481
   type: 'test'
   ...
 # Subtest: ids are unique
 ok 2 - ids are unique
   ---
-  duration_ms: 0.185143
+  duration_ms: 0.203477
   type: 'test'
   ...
 # Subtest: en, zh, pinyin, th are non-empty strings
 ok 3 - en, zh, pinyin, th are non-empty strings
   ---
-  duration_ms: 0.430001
+  duration_ms: 0.473622
   type: 'test'
   ...
 # Subtest: pinyin contains a tone mark
 ok 4 - pinyin contains a tone mark
   ---
-  duration_ms: 0.419954
+  duration_ms: 0.430702
   type: 'test'
   ...
 # Subtest: every picture file exists (words and category tiles)
 ok 5 - every picture file exists (words and category tiles)
   ---
-  duration_ms: 2.120288
+  duration_ms: 4.556507
   type: 'test'
   ...
 # Subtest: every category is known and has at least 4 words
 ok 6 - every category is known and has at least 4 words
   ---
-  duration_ms: 0.322259
+  duration_ms: 0.433977
   type: 'test'
   ...
 # Subtest: nothing is marked reviewed (owner reviews)
 ok 7 - nothing is marked reviewed (owner reviews)
   ---
-  duration_ms: 0.261886
+  duration_ms: 0.31898
   type: 'test'
   ...
 # Subtest: every word, both languages, 25 seeds: 4 valid options
 ok 8 - every word, both languages, 25 seeds: 4 valid options
   ---
-  duration_ms: 49.288889
+  duration_ms: 67.258956
   type: 'test'
   ...
 # Subtest: duplicate labels or pictures in the pool are never offered together
 ok 9 - duplicate labels or pictures in the pool are never offered together
   ---
-  duration_ms: 0.891198
+  duration_ms: 1.077768
   type: 'test'
   ...
 # Subtest: too few distinct options throws instead of repeating
 ok 10 - too few distinct options throws instead of repeating
   ---
-  duration_ms: 0.958302
+  duration_ms: 1.196617
   type: 'test'
   ...
 # Subtest: correct answer position varies (not always first)
 ok 11 - correct answer position varies (not always first)
   ---
-  duration_ms: 0.770623
+  duration_ms: 0.844439
   type: 'test'
   ...
 # Subtest: save + load round trip with a mocked storage
 ok 12 - save + load round trip with a mocked storage
   ---
-  duration_ms: 1.635309
+  duration_ms: 2.014951
   type: 'test'
   ...
 # Subtest: v1 stars are migrated to v2 progress
 ok 13 - v1 stars are migrated to v2 progress
   ---
-  duration_ms: 0.201377
+  duration_ms: 0.266846
   type: 'test'
   ...
 # Subtest: corrupt or missing data gives a clean state
 ok 14 - corrupt or missing data gives a clean state
   ---
-  duration_ms: 0.160503
+  duration_ms: 0.218194
   type: 'test'
   ...
 # Subtest: storage that throws (private mode) never breaks the app
 ok 15 - storage that throws (private mode) never breaks the app
   ---
-  duration_ms: 0.1735
+  duration_ms: 0.234117
   type: 'test'
   ...
 # Subtest: streak: same day no change, next day +1, gap resets to 1
 ok 16 - streak: same day no change, next day +1, gap resets to 1
   ---
-  duration_ms: 0.12687
+  duration_ms: 0.208786
   type: 'test'
   ...
 # Subtest: streak crosses month and year boundaries on the local calendar
 ok 17 - streak crosses month and year boundaries on the local calendar
   ---
-  duration_ms: 0.102736
+  duration_ms: 0.148032
   type: 'test'
   ...
 # Subtest: current streak shows 0 once a day was missed
 ok 18 - current streak shows 0 once a day was missed
   ---
-  duration_ms: 0.12897
+  duration_ms: 0.179043
   type: 'test'
   ...
 # Subtest: localDay uses the local calendar date
 ok 19 - localDay uses the local calendar date
   ---
-  duration_ms: 0.092604
+  duration_ms: 0.111974
   type: 'test'
   ...
 # Subtest: review queue: most-missed first, then least-recently-seen; unseen excluded
 ok 20 - review queue: most-missed first, then least-recently-seen; unseen excluded
   ---
-  duration_ms: 0.231948
+  duration_ms: 0.299523
   type: 'test'
   ...
 # Subtest: review queue: ties broken by id for a stable order
 ok 21 - review queue: ties broken by id for a stable order
   ---
-  duration_ms: 0.112604
+  duration_ms: 0.305304
   type: 'test'
   ...
 # Subtest: review queue is per language
 ok 22 - review queue is per language
   ---
-  duration_ms: 0.100047
+  duration_ms: 0.167875
   type: 'test'
   ...
 # Subtest: round: missed words first, then unseen/oldest, capped at size
 ok 23 - round: missed words first, then unseen/oldest, capped at size
   ---
-  duration_ms: 0.154157
+  duration_ms: 0.222272
   type: 'test'
   ...
 # Subtest: recordAnswer updates counts and moves a missed word to the front
 ok 24 - recordAnswer updates counts and moves a missed word to the front
   ---
-  duration_ms: 0.230549
+  duration_ms: 0.337829
   type: 'test'
   ...
 1..24
@@ -152,5 +152,5 @@ ok 24 - recordAnswer updates counts and moves a missed word to the front
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 130.071583
+# duration_ms 173.949226
 exit=0
