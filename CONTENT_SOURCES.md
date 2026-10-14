@@ -12,13 +12,11 @@
 ## Words
 
 - English (`en`) and Thai (`th`): drafted by Claude Code, `reviewed: false`. The owner is the reviewer.
-- Chinese (`zh`, simplified) and `pinyin` (tone-marked): **DRAFTED by Claude Code, NOT yet checked against
-  CC-CEDICT.** The brief asks for CC-CEDICT (CC BY-SA 4.0, https://www.mdbg.net/chinese/dictionary?page=cc-cedict)
-  as the source, but downloading it was outside the network allowance of the brief. To check:
-  download `cedict_1_0_ts_utf-8_mdbg.txt.gz` from that page, then run
-  `python3 tools/check_cedict.py <path-to-cedict.txt.gz>`; it reports, per word, whether the headword exists
-  and whether the pinyin matches a CC-CEDICT reading. If CC-CEDICT data is copied into this repo later, that
-  file is CC BY-SA 4.0 and must carry its attribution and license.
+- Chinese (`zh`, simplified) and `pinyin` (tone-marked): drafted by Claude Code, then **checked against
+  CC-CEDICT** (CC BY-SA 4.0, https://www.mdbg.net/chinese/dictionary?page=cc-cedict), release
+  2026-10-13T08:59:07Z, file sha256 dace310e...1f49df: **100 of 100 OK** (simplified headword present and the
+  pinyin equals one of its listed readings; meanings were not checked). Output: `evidence/cedict-check.txt`.
+  No CC-CEDICT data is copied into this repo (the dictionary file is git-ignored), so no BY-SA terms attach.
 - No record is marked `reviewed: true`; only the owner may do that.
 
 ## Picture files (sha256)

@@ -117,7 +117,7 @@ try {
   await evaluate("document.getElementById('back').click()");
 
   check('service worker active', await waitFor("navigator.serviceWorker.ready.then(r => !!r.active)", 15000));
-  const cached = await evaluate("caches.open('lingolite-v5').then(c => c.keys()).then(k => k.length)");
+  const cached = await evaluate("caches.open('lingolite-v6').then(c => c.keys()).then(k => k.length)");
   check('precache has shell + 100 pictures', cached >= 110, `(${cached} entries)`);
 
   await cdp('Network.emulateNetworkConditions', { offline: true, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });

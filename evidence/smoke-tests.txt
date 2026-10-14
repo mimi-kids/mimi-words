@@ -1,4 +1,4 @@
-# node tools/smoke_test.mjs   (headless Google Chrome 155.0.8059.39, 412x915 viewport, 2026-10-14T08:58:41Z)
+# node tools/smoke_test.mjs   (headless Google Chrome 155.0.8059.39, 412x915 viewport, 2026-10-14T09:03:57Z)
 # Desktop headless only: no phone, no audio output verified.
 ok   home shows 6 categories 
 ok   animals grid shows 25 pictures 

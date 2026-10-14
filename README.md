@@ -68,7 +68,8 @@ Latest results: `evidence/unit-tests.txt`, `evidence/smoke-tests.txt`.
 - **Audio not verified.** Headless Chrome plays no sound; whether en-US, zh-CN and th-TH voices exist and
   work offline depends on each device and has not been checked. Without a matching voice the app shows 🔇
   (Look) or the written word (Listen).
-- **Chinese and pinyin not yet checked against CC-CEDICT** (`tools/check_cedict.py`, owner downloads the file).
+- Chinese and pinyin match CC-CEDICT (100/100 headword + reading, `evidence/cedict-check.txt`); that check does
+  not confirm the meaning fits the picture - that is part of the owner review.
 - **No word is reviewed.** English, Thai, Chinese and the category labels are drafts.
 - Four pictures are stand-ins, flagged in `REVIEW.md`: water (droplet), arm (flexed biceps), heart (symbol),
   pink (pink heart).

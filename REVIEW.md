@@ -1,8 +1,8 @@
 # Owner review sheet
 
 Every row is a DRAFT (`reviewed: false`). To approve a row, set `"reviewed": true` for that id in
-`data/words.json` (only the owner does this). Chinese + pinyin are not yet checked against CC-CEDICT:
-run `python3 tools/check_cedict.py <cedict file>` first (see CONTENT_SOURCES.md).
+`data/words.json` (only the owner does this). Chinese + pinyin were checked against CC-CEDICT (2026-10-13 release): 100/100
+headwords present with a matching reading (evidence/cedict-check.txt); meanings are for you to confirm.
 
 Category labels (`category_labels` in words.json) are drafts too: animals = Animals / 动物 / สัตว์, food = Food / 食物 / อาหาร, body = Body / 身体 / ร่างกาย, colors = Colors / 颜色 / สี, numbers = Numbers / 数字 / ตัวเลข, home = Home / 家 / บ้าน.
 
@@ -36,7 +36,7 @@ Category labels (`category_labels` in words.json) are drafts too: animals = Anim
 | 26 | food-apple | 1f34e.svg | apple | 苹果 | píngguǒ | แอปเปิล |  |
 | 27 | food-banana | 1f34c.svg | banana | 香蕉 | xiāngjiāo | กล้วย |  |
 | 28 | food-orange | 1f34a.svg | orange | 橙子 | chéngzi | ส้ม |  |
-| 29 | food-grapes | 1f347.svg | grapes | 葡萄 | pútao | องุ่น | pinyin pútao: second syllable neutral in CC-CEDICT? check |
+| 29 | food-grapes | 1f347.svg | grapes | 葡萄 | pútao | องุ่น | pútao matches CC-CEDICT |
 | 30 | food-watermelon | 1f349.svg | watermelon | 西瓜 | xīguā | แตงโม |  |
 | 31 | food-strawberry | 1f353.svg | strawberry | 草莓 | cǎoméi | สตรอว์เบอร์รี |  |
 | 32 | food-mango | 1f96d.svg | mango | 芒果 | mángguǒ | มะม่วง |  |
