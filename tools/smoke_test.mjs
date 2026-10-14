@@ -136,7 +136,13 @@ try {
   await waitFor("!!document.querySelector('.gear')");
   await evaluate("document.querySelector('.gear').click()");
   check('settings: 3 voice dropdowns + test buttons', await waitFor("document.querySelectorAll('.settings select').length === 3 && document.querySelectorAll('.settings .set-row .pill').length === 3"));
-  check('settings: audio source shown per language (no audio yet -> TTS)', await evaluate("['en','zh','th'].every(l => document.getElementById('audio-source-' + l).textContent === 'เสียง: TTS')"));
+  // expected text per language follows audio/manifest.json: "เสียง: ไฟล์ (n)" when it lists n clips, else "เสียง: TTS"
+  const srcOk = await evaluate(`fetch('audio/manifest.json').then(r => r.ok ? r.json() : {clips: []}).then(m => ['en','zh','th'].every(l => {
+    const n = (m.clips || []).filter(c => c.lang === l).length;
+    return document.getElementById('audio-source-' + l).textContent === (n ? 'เสียง: ไฟล์ (' + n + ')' : 'เสียง: TTS');
+  }))`);
+  check('settings: audio source per language matches the manifest', srcOk);
+  check('a pre-generated clip is served (audio/th/animal-cat.mp3)', await evaluate("fetch('audio/th/animal-cat.mp3').then(r => r.ok && r.headers.get('content-length') !== '0')"));
   check('settings: rate slider 0.5-1.0, default 0.75', await evaluate("(() => { const r = document.getElementById('rate'); return r.min === '0.5' && r.max === '1' && Number(r.value) === 0.75; })()"));
   await evaluate("(() => { const r = document.getElementById('rate'); r.value = '0.6'; r.dispatchEvent(new Event('input')); })()");
   check('settings saved in localStorage', await evaluate("JSON.parse(localStorage.getItem('mimi.settings.v1')).rate === 0.6"));

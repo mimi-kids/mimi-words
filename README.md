@@ -67,7 +67,7 @@ After changing any shipped file, bump `CACHE` in `sw.js` so installed copies upd
 
 ```
 node --test tests/                     # 41 unit tests (no npm): data, distractors, queue, progress, streak, voices, Thai, audio
-node tools/smoke_test.mjs [shots-dir]  # 37 headless Chrome checks incl. quiz, listen, review, pinyin font, settings, Thai, offline
+node tools/smoke_test.mjs [shots-dir]  # 38 headless Chrome checks incl. quiz, listen, review, pinyin font, settings, audio, Thai, offline
 node tools/validate_audio.js [--partial]  # audio manifest vs words and files (sha256)
 python3 tools/validate_words.py        # data shape
 python3 tools/check_cedict.py <file>   # Chinese + pinyin vs a local CC-CEDICT file (offline)
