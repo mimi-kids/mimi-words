@@ -112,7 +112,7 @@
 
   function modeBar(c, active) {
     var bar = el('div', 'modes');
-    [['learn', '👀', 'ดูภาพ / Look'], ['quiz', '❓', 'ทายคำ / Quiz']].forEach(function (m) {
+    [['learn', '👀', 'ดูภาพ / Look'], ['quiz', '❓', 'ทายคำ / Quiz'], ['listen', '👂', 'ฟังแล้วเลือกภาพ / Listen']].forEach(function (m) {
       var b = el('button', 'mode' + (m[0] === active ? ' on' : ''));
       b.setAttribute('aria-label', m[2]);
       b.setAttribute('aria-pressed', String(m[0] === active));
@@ -147,7 +147,8 @@
     window.scrollTo(0, 0);
   }
 
-  // ------------------------------------------------------------ rounds (quiz)
+  // ------------------------------------------------------------ rounds (quiz + listen)
+  // kind = 'quiz' (picture -> pick the word) or 'listen' (spoken word -> pick the picture).
   // source = a category name. 10 questions, most-missed words first.
   function startRound(kind, source) {
     var pool = wordsIn(source);
@@ -168,17 +169,38 @@
     view.appendChild(modeBar(round.source, round.kind));
     view.appendChild(el('div', 'progress', (round.index + 1) + ' / ' + round.questions.length));
     var stage = el('div', 'stage');
-    stage.appendChild(picture(q.word.icon));
+    if (round.kind === 'listen') {
+      var replay = el('button', 'round listen speak');
+      replay.setAttribute('aria-label', 'ฟังอีกครั้ง / Listen again');
+      replay.appendChild(el('span', null, '🔊'));
+      replay.addEventListener('click', function () { speak(label(q.word), state.lang); });
+      stage.appendChild(replay);
+      if (!canSpeak(state.lang)) {
+        // No device voice for this language: show the word so the round is still playable.
+        stage.appendChild(el('div', 'novoice', '🔇 ' + label(q.word)));
+      }
+    } else {
+      stage.appendChild(picture(q.word.icon));
+    }
     view.appendChild(stage);
     var opts = el('div', 'options');
-    q.options.forEach(function (w) {
-      var b = el('button', 'opt');
-      wordButtonContent(b, w);
+    q.options.forEach(function (w, i) {
+      var b = el('button', round.kind === 'listen' ? 'opt pic' : 'opt');
+      if (round.kind === 'listen') {
+        b.setAttribute('aria-label', 'ภาพ ' + (i + 1) + ' / picture ' + (i + 1));
+        b.appendChild(picture(w.icon));
+      } else {
+        wordButtonContent(b, w);
+      }
       b.dataset.id = w.id;
       b.addEventListener('click', function () { answer(b, w); });
       opts.appendChild(b);
     });
     view.appendChild(opts);
+    if (round.kind === 'listen') {
+      var r = round;
+      setTimeout(function () { if (r === round && !r.locked) speak(label(q.word), state.lang); }, 250);
+    }
   }
 
   function answer(button, chosen) {
