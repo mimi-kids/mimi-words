@@ -95,6 +95,20 @@
     round = null;
     $('back').hidden = true;
     clear();
+    var today = L.localDay(new Date());
+    var top = el('div', 'homebar');
+    var streak = L.currentStreak(state, state.lang, today);
+    var s = el('div', 'streak', '🔥 ' + streak);
+    s.setAttribute('aria-label', 'เล่นต่อเนื่อง ' + streak + ' วัน / ' + streak + ' day streak');
+    top.appendChild(s);
+    var queue = L.reviewQueue(state, state.lang, data.words);
+    var review = el('button', 'review');
+    review.setAttribute('aria-label', 'ทบทวน / Review');
+    review.appendChild(el('span', null, '🔁 ' + Math.min(queue.length, ROUND_SIZE)));
+    review.disabled = queue.length === 0;
+    review.addEventListener('click', function () { startRound('quiz', 'review'); });
+    top.appendChild(review);
+    view.appendChild(top);
     var grid = el('div', 'grid');
     data.categories.forEach(function (c) {
       var meta = data.category_labels[c];
@@ -150,9 +164,13 @@
   // ------------------------------------------------------------ rounds (quiz + listen)
   // kind = 'quiz' (picture -> pick the word) or 'listen' (spoken word -> pick the picture).
   // source = a category name. 10 questions, most-missed words first.
+  // source 'review' = the review queue (most-missed, then least-recently-seen) across all categories;
+  // distractors always come from each word's own category.
   function startRound(kind, source) {
-    var pool = wordsIn(source);
-    var words = L.roundWords(state, state.lang, pool, ROUND_SIZE);
+    var words = source === 'review'
+      ? L.reviewQueue(state, state.lang, data.words).slice(0, ROUND_SIZE)
+      : L.roundWords(state, state.lang, wordsIn(source), ROUND_SIZE);
+    if (!words.length) { showHome(); return; }
     round = {
       kind: kind, source: source, index: 0, score: 0, locked: false,
       questions: words.map(function (w) { return { word: w, options: L.pickOptions(data.words, w, state.lang) }; })
@@ -166,7 +184,7 @@
     clear();
     var q = round.questions[round.index];
     round.locked = false;
-    view.appendChild(modeBar(round.source, round.kind));
+    if (round.source !== 'review') view.appendChild(modeBar(round.source, round.kind));
     view.appendChild(el('div', 'progress', (round.index + 1) + ' / ' + round.questions.length));
     var stage = el('div', 'stage');
     if (round.kind === 'listen') {
