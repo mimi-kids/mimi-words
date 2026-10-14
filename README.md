@@ -19,6 +19,13 @@ The language toggle (ABC / 中文) chooses the language for everything; Thai is 
    spoken. Wrong -> the button shakes, the right one turns green and is spoken.
 3. **Listen (👂)** - the child taps 🔊 to hear the word, then picks 1 of 4 pictures. Same feedback.
 
+**Voice** (owner 2026-10-14): rate 0.75, pitch 1.1, volume 1.0 (constants `SPEECH` in `logic.js`). The voice per language
+is chosen automatically by a preference list (en: Google US English, Samantha, Microsoft Aria, any en-US, any en-*;
+zh: Google 普通话, Ting-Ting, Tingting, Microsoft Xiaoxiao, any zh-CN, any zh-*; th: Google ไทย, Kanya, Microsoft
+Premwadee, any th-TH); with no match the browser default voice speaks. **Settings** (gear ⚙ on the home screen,
+for parents): a voice dropdown per language listing this device's voices with a ฟัง test button, a rate slider
+0.5-1.0, "คืนค่าเดิม" to reset, and the device voice list to copy (see `evidence/voices.md`). Saved in localStorage.
+
 **Sound only after a tap** (owner 2026-10-14): nothing is spoken when a card opens, on ◀ ▶, on a language change
 or when a new question appears; the same code runs on desktop and mobile. Quiz/Listen still speak the word after
 the child taps an answer (feedback to that tap).
@@ -43,8 +50,8 @@ After changing any shipped file, bump `CACHE` in `sw.js` so installed copies upd
 ## Tests
 
 ```
-node --test tests/                     # 24 unit tests (no npm): data, distractors, queue, progress, streak
-node tools/smoke_test.mjs [shots-dir]  # 27 headless Chrome checks incl. quiz, listen, review, pinyin font, offline
+node --test tests/                     # 32 unit tests (no npm): data, distractors, queue, progress, streak, voices
+node tools/smoke_test.mjs [shots-dir]  # 31 headless Chrome checks incl. quiz, listen, review, pinyin font, settings, offline
 python3 tools/validate_words.py        # data shape
 python3 tools/check_cedict.py <file>   # Chinese + pinyin vs a local CC-CEDICT file (offline)
 ```
@@ -78,6 +85,8 @@ Latest results: `evidence/unit-tests.txt`, `evidence/smoke-tests.txt`.
 
 - **Not tested on a phone.** All testing so far is desktop headless Chrome (412x915 viewport). Touch feel,
   installability on Android/iOS and the home-screen icon are unverified.
+- **Desktop voices are network voices.** Headless Chrome on the build machine lists 19 Google voices, all
+  `localService=false`, and no Thai voice (`evidence/voices.md`). Phone lists still to be collected.
 - **Audio not verified.** Headless Chrome plays no sound; whether en-US, zh-CN and th-TH voices exist and
   work offline depends on each device and has not been checked. Without a matching voice the app shows 🔇
   (Look) or the written word (Listen).

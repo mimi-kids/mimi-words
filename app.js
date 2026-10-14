@@ -27,22 +27,16 @@
   function save() { L.saveState(store, state); }
 
   // ------------------------------------------------------------ speech (device voices only)
+  // Constants and voice preferences live in logic.js (L.SPEECH, L.VOICE_PREFS, L.chooseVoice).
+  var settings = L.loadSettings(store);
   var voices = [];
   function refreshVoices() {
     if ('speechSynthesis' in window) voices = window.speechSynthesis.getVoices() || [];
+    if (screen.name === 'settings') showSettings();   // voices often arrive late (voiceschanged)
   }
-  function voiceFor(lang) {
-    var want = VOICE_LANG[lang].toLowerCase();
-    var prefix = want.split('-')[0];
-    var exact = null, close = null;
-    for (var i = 0; i < voices.length; i++) {
-      var vl = (voices[i].lang || '').toLowerCase().replace('_', '-');
-      if (vl === want && (!exact || voices[i].localService)) exact = voices[i];
-      else if (vl.split('-')[0] === prefix && !close) close = voices[i];
-    }
-    return exact || close;
-  }
+  function voiceFor(lang) { return L.chooseVoice(voices, lang, settings.voices[lang]); }
   function canSpeak(lang) {
+    // An empty list means "not loaded yet" or "default voice only": speak anyway with the default voice.
     return 'speechSynthesis' in window && (voices.length === 0 || !!voiceFor(lang));
   }
   function speak(text, lang) {
@@ -50,8 +44,10 @@
     var u = new SpeechSynthesisUtterance(text);
     u.lang = VOICE_LANG[lang];
     var v = voiceFor(lang);
-    if (v) u.voice = v;
-    u.rate = 0.8;   // a little slower for children
+    if (v) u.voice = v;          // no match -> the browser's default voice, never silent
+    u.rate = settings.rate;
+    u.pitch = L.SPEECH.pitch;
+    u.volume = L.SPEECH.volume;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(u);
     return true;
@@ -108,7 +104,13 @@
     review.appendChild(el('span', null, '🔁 ' + Math.min(queue.length, ROUND_SIZE)));
     review.disabled = queue.length === 0;
     review.addEventListener('click', function () { startRound('quiz', 'review'); });
-    top.appendChild(review);
+    var gear = el('button', 'gear', '⚙');
+    gear.setAttribute('aria-label', 'ตั้งค่าเสียง (สำหรับผู้ปกครอง) / Voice settings');
+    gear.addEventListener('click', showSettings);
+    var right = el('div', 'homebar-right');
+    right.appendChild(gear);
+    right.appendChild(review);
+    top.appendChild(right);
     view.appendChild(top);
     var grid = el('div', 'grid');
     data.categories.forEach(function (c) {
@@ -307,7 +309,76 @@
     if (!$('card').hidden) renderCard(current.index);
     else if (screen.name === 'round') startRound(round.kind, round.source);
     else if (screen.name === 'category') showCategory(screen.category);
+    else if (screen.name === 'settings') showSettings();
     else showHome();
+  }
+
+  // ------------------------------------------------------------ settings (parent-facing, plain text)
+  var SAMPLE = { en: 'cat', zh: '猫', th: 'แมว' };
+  var LANG_NAME = { en: 'English', zh: '中文', th: 'ไทย' };
+  function showSettings() {
+    screen = { name: 'settings', category: null };
+    round = null;
+    $('back').hidden = false;
+    clear();
+    var box = el('div', 'settings');
+    box.appendChild(el('h2', null, 'ตั้งค่าเสียง / Voice settings'));
+    ['en', 'zh', 'th'].forEach(function (lang) {
+      var row = el('div', 'set-row');
+      var id = 'voice-' + lang;
+      var lab = el('label', null, LANG_NAME[lang]);
+      lab.htmlFor = id;
+      row.appendChild(lab);
+      var sel = el('select');
+      sel.id = id;
+      var auto = voiceFor(lang);
+      sel.appendChild(new Option('อัตโนมัติ / auto' + (auto ? ' (' + auto.name + ')' : ' (เสียงเริ่มต้น / default)'), ''));
+      var prefix = L.VOICE_PREFS[lang].tag.split('-')[0];
+      voices.filter(function (v) { return String(v.lang).replace('_', '-').toLowerCase().split('-')[0] === prefix; })
+        .forEach(function (v) { sel.appendChild(new Option(v.name + ' (' + v.lang + ')', v.voiceURI)); });
+      sel.value = settings.voices[lang] || '';
+      sel.addEventListener('change', function () {
+        settings.voices[lang] = sel.value || null;
+        L.saveSettings(store, settings);
+      });
+      row.appendChild(sel);
+      var test = el('button', 'pill', 'ฟัง');
+      test.setAttribute('aria-label', 'ฟัง ' + LANG_NAME[lang] + ' / test');
+      test.addEventListener('click', function () { speak(SAMPLE[lang], lang); });
+      row.appendChild(test);
+      box.appendChild(row);
+    });
+    var rateRow = el('div', 'set-row');
+    var rl = el('label', null, 'ความเร็ว / rate');
+    rl.htmlFor = 'rate';
+    var rate = el('input');
+    rate.type = 'range'; rate.id = 'rate';
+    rate.min = String(L.SPEECH.minRate); rate.max = String(L.SPEECH.maxRate); rate.step = '0.05';
+    rate.value = String(settings.rate);
+    var rv = el('span', 'rate-value', settings.rate.toFixed(2));
+    rate.addEventListener('input', function () {
+      settings.rate = Number(rate.value);
+      rv.textContent = settings.rate.toFixed(2);
+      L.saveSettings(store, settings);
+    });
+    rateRow.appendChild(rl); rateRow.appendChild(rate); rateRow.appendChild(rv);
+    box.appendChild(rateRow);
+    var reset = el('button', 'pill', 'คืนค่าเดิม');
+    reset.id = 'settings-reset';
+    reset.addEventListener('click', function () {
+      settings = L.defaultSettings();
+      L.saveSettings(store, settings);
+      showSettings();
+    });
+    box.appendChild(reset);
+    box.appendChild(el('h3', null, 'เสียงบนเครื่องนี้ / Voices on this device (' + voices.length + ')'));
+    var list = el('pre', 'voice-list');
+    list.id = 'voice-list';
+    list.textContent = voices.length
+      ? voices.map(function (v) { return v.name + ' | ' + v.lang + ' | localService=' + v.localService; }).join('\n')
+      : '(ไม่มีรายการเสียง / no voices reported by this browser)';
+    box.appendChild(list);
+    view.appendChild(box);
   }
 
   function goBack() {

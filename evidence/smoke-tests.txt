@@ -1,4 +1,4 @@
-# node tools/smoke_test.mjs   (headless Google Chrome 155.0.8059.39, 412x915 viewport, 2026-10-14T11:10:34Z)
+# node tools/smoke_test.mjs   (headless Google Chrome 155.0.8059.39, 412x915 viewport, 2026-10-14T11:21:08Z)
 # Desktop headless only: no phone, no audio output verified.
 ok   home shows 6 categories 
 ok   animals grid shows 25 pictures 
@@ -23,9 +23,14 @@ ok   review first question = most-missed word
 ok   green card shows lǜsè 
 ok   color pictures are inline circles 
 ok   pinyin ü rendered by one font, no fallback (Noto Sans (4 glyphs))
+ok   settings: 3 voice dropdowns + test buttons 
+ok   settings: rate slider 0.5-1.0, default 0.75 
+ok   settings saved in localStorage 
+ok   settings reset restores 0.75 
+VOICES (headless desktop): count=19 | Google Deutsch | de-DE | localService=false ; Google US English | en-US | localService=false ; Google UK English Female | en-GB | localService=false ; Google UK English Male | en-GB | localService=false ; Google español | es-ES | localService=false ; Google español de Estados Unidos | es-US | localService=false ; Google français | fr-FR | localService=false ; Google हिन्दी | hi-IN | localService=false ; Google Bahasa Indonesia | id-ID | localService=false ; Google italiano | it-IT | localService=false ; Google 日本語 | ja-JP | localService=false ; Google 한국의 | ko-KR | localService=false ; Google Nederlands | nl-NL | localService=false ; Google polski | pl-PL | localService=false ; Google português do Brasil | pt-BR | localService=false ; Google русский | ru-RU | localService=false ; Google 普通话（中国大陆） | zh-CN | localService=false ; Google 粤語（香港） | zh-HK | localService=false ; Google 國語（臺灣） | zh-TW | localService=false
 ok   service worker active 
 ok   precache has shell + 90 picture files (colors are inline) (100 entries)
 ok   offline reload still shows home 
 ok   offline picture served from cache 
-SMOKE PASS (27 checks)
+SMOKE PASS (31 checks)
 exit=0

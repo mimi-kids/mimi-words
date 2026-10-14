@@ -147,7 +147,58 @@
     try { storage.setItem(STORE_KEY, JSON.stringify(state)); return true; } catch (e) { return false; }
   }
 
+  // ------------------------------------------------------------ speech settings and voice choice
+  // One place for the speech constants (owner 2026-10-14).
+  var SPEECH = { rate: 0.75, pitch: 1.1, volume: 1.0, minRate: 0.5, maxRate: 1.0 };
+  // Preference per language: voice-name substrings first (in order), then the language tag, then any variant.
+  // The Web Speech API exposes no gender; the named voices are the common female voices on each platform.
+  var VOICE_PREFS = {
+    en: { tag: 'en-US', names: ['Google US English', 'Samantha', 'Microsoft Aria'], anyPrefix: true },
+    zh: { tag: 'zh-CN', names: ['Google 普通话', 'Ting-Ting', 'Tingting', 'Microsoft Xiaoxiao'], anyPrefix: true },
+    th: { tag: 'th-TH', names: ['Google ไทย', 'Kanya', 'Microsoft Premwadee'], anyPrefix: false }
+  };
+  var SETTINGS_KEY = 'mimi.settings.v1';
+
+  function normTag(t) { return String(t || '').replace('_', '-').toLowerCase(); }
+
+  // voices: array of {name, lang, voiceURI, localService}; savedURI: the parent's choice or null.
+  // Returns a voice object or undefined (undefined = let the browser use its default voice; never silent).
+  function chooseVoice(voices, lang, savedURI) {
+    var pref = VOICE_PREFS[lang];
+    if (!voices || !voices.length || !pref) return undefined;
+    var tag = normTag(pref.tag), prefix = tag.split('-')[0];
+    var inLang = voices.filter(function (v) { return normTag(v.lang).split('-')[0] === prefix; });
+    if (savedURI) {
+      for (var k = 0; k < inLang.length; k++) if (inLang[k].voiceURI === savedURI) return inLang[k];
+    }
+    for (var i = 0; i < pref.names.length; i++) {
+      for (var j = 0; j < inLang.length; j++) {
+        if (String(inLang[j].name || '').indexOf(pref.names[i]) >= 0) return inLang[j];
+      }
+    }
+    var exact = inLang.filter(function (v) { return normTag(v.lang) === tag; });
+    if (exact.length) return exact[0];
+    if (pref.anyPrefix && inLang.length) return inLang[0];
+    return undefined;
+  }
+
+  function defaultSettings() { return { rate: SPEECH.rate, voices: { en: null, zh: null, th: null } }; }
+  function loadSettings(storage) {
+    var s = defaultSettings();
+    try {
+      var v = JSON.parse(storage.getItem(SETTINGS_KEY) || 'null');
+      if (v && typeof v.rate === 'number' && v.rate >= SPEECH.minRate && v.rate <= SPEECH.maxRate) s.rate = v.rate;
+      if (v && v.voices) ['en', 'zh', 'th'].forEach(function (l) { if (typeof v.voices[l] === 'string') s.voices[l] = v.voices[l]; });
+    } catch (e) { /* defaults */ }
+    return s;
+  }
+  function saveSettings(storage, settings) {
+    try { storage.setItem(SETTINGS_KEY, JSON.stringify(settings)); return true; } catch (e) { return false; }
+  }
+
   return {
+    SPEECH: SPEECH, VOICE_PREFS: VOICE_PREFS, SETTINGS_KEY: SETTINGS_KEY, chooseVoice: chooseVoice,
+    defaultSettings: defaultSettings, loadSettings: loadSettings, saveSettings: saveSettings,
     STORE_KEY: STORE_KEY, shuffle: shuffle, labelOf: labelOf, pickOptions: pickOptions,
     emptyState: emptyState, recordSeen: recordSeen, recordAnswer: recordAnswer, seenCount: seenCount,
     reviewQueue: reviewQueue, roundWords: roundWords, localDay: localDay, previousDay: previousDay,
