@@ -1,0 +1,49 @@
+{
+ "provider": "Google Cloud Text-to-Speech",
+ "audioConfig": {
+  "audioEncoding": "MP3",
+  "speakingRate": 0.8,
+  "pitch": 1.0,
+  "sampleRateHertz": 24000
+ },
+ "voices": {
+  "en": "en-US-Neural2-C",
+  "zh": "cmn-CN-Wavenet-A",
+  "th": "th-TH-Neural2-C"
+ },
+ "clips": [
+  {
+   "id": "animal-cat",
+   "lang": "en",
+   "text": "cat",
+   "voice": "en-US-Neural2-C",
+   "provider": "Google Cloud Text-to-Speech",
+   "date": "2026-10-14",
+   "file": "audio/en/animal-cat.mp3",
+   "sha256": "df0cf6c8f3521611d739d0cbb2cb29577881af836b0a5bbd80d3a478a7c91797",
+   "bytes": 6720
+  },
+  {
+   "id": "animal-cat",
+   "lang": "th",
+   "text": "แมว",
+   "voice": "th-TH-Neural2-C",
+   "provider": "Google Cloud Text-to-Speech",
+   "date": "2026-10-14",
+   "file": "audio/th/animal-cat.mp3",
+   "sha256": "f5da74abe01a8a1f5ec4463b58a14cf4fb157ba999c06b63c387cfef8fc5bea6",
+   "bytes": 8064
+  },
+  {
+   "id": "animal-cat",
+   "lang": "zh",
+   "text": "猫",
+   "voice": "cmn-CN-Wavenet-A",
+   "provider": "Google Cloud Text-to-Speech",
+   "date": "2026-10-14",
+   "file": "audio/zh/animal-cat.mp3",
+   "sha256": "bb3b00ead4f2c7392f50ad971b2b884c0f35e1ce907911fa16c834b810c6a1f1",
+   "bytes": 6336
+  }
+ ]
+}
