@@ -1,7 +1,7 @@
-# python3 tools/check_cedict.py cedict_1_0_ts_utf-8_mdbg.txt.gz   (2026-10-14T09:03:38Z)
+# python3 tools/check_cedict.py cedict_1_0_ts_utf-8_mdbg.txt.gz   (2026-10-14T11:10:39Z, after the GPT/Gemini fixes of 2026-10-14)
 # file sha256 dace310e1279fb51666bb8fc743131f9f12b8e6bdb11a36f58087bdf9f1f49df; header: version=1, date=2026-10-13T08:59:07Z, license CC BY-SA 4.0
 # OK = simplified headword exists in CC-CEDICT AND the pinyin equals one of its listed readings (meaning not checked).
-# Negative control: a scratch copy with one wrong pinyin (mǎo) and one fake headword (狗狗狗) -> PINYIN_DIFFERS 1, NOT_IN_CEDICT 1, OK 98.
+# Changed Chinese entries this round: body-mouth 嘴巴 zuǐba, body-finger 手指 shǒuzhǐ (body-heart 心 xīn unchanged).
 animal-cat             猫      māo            OK
 animal-dog             狗      gǒu            OK
 animal-bird            鸟      niǎo           OK
@@ -55,13 +55,13 @@ food-potato            土豆     tǔdòu          OK
 body-eye               眼睛     yǎnjing        OK
 body-ear               耳朵     ěrduo          OK
 body-nose              鼻子     bízi           OK
-body-mouth             嘴      zuǐ            OK
+body-mouth             嘴巴     zuǐba          OK
 body-tongue            舌头     shétou         OK
 body-hand              手      shǒu           OK
 body-foot              脚      jiǎo           OK
 body-leg               腿      tuǐ            OK
 body-tooth             牙齿     yáchǐ          OK
-body-arm               胳膊     gēbo           OK
+body-finger            手指     shǒuzhǐ        OK
 body-heart             心      xīn            OK
 body-brain             大脑     dànǎo          OK
 color-red              红色     hóngsè         OK

@@ -25,9 +25,17 @@ test('pinyin contains a tone mark', () => {
   for (const w of data.words) assert.match(w.pinyin, TONE, w.id);
 });
 
-test('every picture file exists (words and category tiles)', () => {
+test('every picture exists: a picture file, or a self-drawn inline SVG circle for colors', () => {
   const icons = data.words.map((w) => w.icon).concat(Object.values(data.category_labels).map((c) => c.icon));
-  for (const icon of icons) assert.ok(fs.existsSync(path.join(ROOT, icon)), icon);
+  for (const icon of icons) {
+    if (icon.startsWith('data:image/svg+xml,')) {
+      // self-drawn inline SVG (colors): must be a circle with a fill and a border
+      const svg = decodeURIComponent(icon.slice('data:image/svg+xml,'.length));
+      assert.match(svg, /^<svg [^>]*><circle [^>]*fill='#[0-9A-F]{6}'[^>]*stroke='#333333'[^>]*\/><\/svg>$/, icon);
+    } else {
+      assert.ok(fs.existsSync(path.join(ROOT, icon)), icon);
+    }
+  }
 });
 
 test('every category is known and has at least 4 words', () => {

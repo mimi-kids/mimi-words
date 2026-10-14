@@ -4,10 +4,16 @@
 
 - Source: Twemoji v15.1.0, community-maintained fork https://github.com/jdecked/twemoji
 - Fetched 2026-10-14 from `https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/<codepoint>.svg`
-  (only the 100 files below; no other network use).
+  (only the files below; no other network use). 2026-10-14: 261d.svg (finger) added; the 10 color
+  pictures and 2764.svg / 1f4aa.svg removed (colors are now self-drawn inline SVG circles, see below).
 - License (graphics): **CC-BY 4.0**, https://creativecommons.org/licenses/by/4.0/
   Copyright 2019 Twitter, Inc and other contributors; 2024 onwards jdecked/twemoji contributors.
 - Attribution is shown in the app (Credits screen). Files are unmodified.
+
+## Color pictures
+
+- The 10 color words use self-drawn inline SVG circles (fill = the color, 1px #333333 border), stored as
+  `data:image/svg+xml` URIs in `data/words.json`; no external files. Drawn for Mimi, covered by the code license.
 
 ## Words
 
@@ -67,24 +73,16 @@
 | 1f445.svg | 7ba3e8cfbd718c54aeaf8b78b8487552f08f520d1d0653a18860f46d428074e9 |
 | 1f4a1.svg | 2cd037cce2c3c16c3d33b1fbe4d9d46206633af2f8b4e082cea209c56a3e8b56 |
 | 1f4a7.svg | 9ec35e46c27db799e43a08bd2a3c4353d51a0c037f8bdbbc63684f7fefbb0cc0 |
-| 1f4aa.svg | 9abe6b1f8f8e8903d93e62630394568dbbd09e4fdad84026e2374f3935d5d25f |
 | 1f4d6.svg | 78f4d87e4e97c7ab24215a1a04cf9093a1a7556709e00c2e65543ad21e54413d |
 | 1f4f1.svg | 331d62f00a03f10e07dc3a7660891469b6b76e57d78b57a865645a5ae5378486 |
 | 1f4fa.svg | 7f8739611bef5e30d579db0b3783d260cc84bb38e9b3b0f51b566c04d1303564 |
 | 1f511.svg | 8134ea8a0d84b021a3d597d6a697139a78dc31250de036432f23e2207a7fb3d2 |
 | 1f51f.svg | c186ccc66c9fbe188413f5ff1b0664ad85c8f6921626819f954fa7b4e442b460 |
-| 1f534.svg | 93f28a18a1df638b539f6bde99c048a50ad7b8a5643c6966a0546a0c50f7cace |
-| 1f535.svg | b44a2fe208e998b56df46211e07ab012140f047e0b0621ab6b4f17ba434bfca5 |
 | 1f6aa.svg | 19e3a07fb16d79e5ff225ce303bc5ac1343a2aa0188edc1795b1edbf9c566dfe |
 | 1f6bd.svg | 9572d0b51b696deeb679fb45f3ef0b823ac7a6fe100605d9b5c4a87cbde48a79 |
 | 1f6c1.svg | 6d7c12fc386d73d1d83bfa30d66c4ca74e1a48adbd93c3d9c6cb3f888c48dbd4 |
 | 1f6cb.svg | 7a4d0389d1f196ad9e3b979946b96c85a49bd6023d19706b202d360fabcd45df |
 | 1f6cf.svg | dcc1fb41f2bf8d3a50e19e200cc288725d2b3f2190de8f3b50714e16ebb3b366 |
-| 1f7e0.svg | edbbfc60c4e56c0a6db909bc7e4c2c52328b78ba41db4c3e3b2bf6f5dead1f12 |
-| 1f7e1.svg | 35f13b37effb45365808667e08dec3034ca79d587a5343f665c5e53c29345907 |
-| 1f7e2.svg | 66b1c8e22d1f5804ed048c6a1f5fe5d4210c274967d4f7f42e595851d6cd9f47 |
-| 1f7e3.svg | 00eb4fd626a45406019ccd498762d5ab0872c525bf9289f3a3775e8040504be3 |
-| 1f7e4.svg | 35a561b69f60e18dd37f6e6d5c1843a93c6b074f807ec84d0b86d59648f58094 |
 | 1f954.svg | 70f46bb22acc8e9944843d6fcaf4813f10f49fd828a3a026e4fb1e5652008abf |
 | 1f955.svg | 095282c0ebfd6b8fd35cdad033cec807db20afa8a2558e3ebbc038670efd73c5 |
 | 1f95a.svg | 26d7a3741923d3f0faafa00443364be1fdb73c4b4a8797700f74d008b5d52408 |
@@ -109,11 +107,9 @@
 | 1fa9f.svg | 08e11fb5ea5fee8af5ff91d3f21e5d246dce69c078ef7d00e64b72156f82cf28 |
 | 23f0.svg | 9261f80678e69407d7626915cbff3020581891e16c039fc7aa207228a21b2832 |
 | 2602.svg | ddf02be76a01886fbf17c77ffc58bdae52d6abf9c9481e6ad3207575507933e6 |
-| 26aa.svg | 2b3db84b20166284b6710898a39baecd15db929f5a42ff89603d9a4076638764 |
-| 26ab.svg | 19db983a0eb045f757dc9593ac7a083c412eb682463f50d39c46358fdf17f5c6 |
+| 261d.svg | cf39cb22502e5bb7e8d340f30cf84fb5b8b8e477e9e0b4578caeb4b704afec2d |
 | 2702.svg | e73badc50626dc25aa1aaf83d602eb41b098ecce417cc59ef4e55936bda792d3 |
 | 270b.svg | 76637c8dd1c4dbfb6ead5b20a79244fd94e38b7ce90a1f728ff647ac46d88ec9 |
-| 2764.svg | 09a743ee0c32ca57c9be64b13b29c396310d1dd309cb4d7d3be722e47db95f27 |
 | 31-20e3.svg | eb87966d6bb5e4869b7605181665130326730e86a82aef4591371fe6dc57f42a |
 | 32-20e3.svg | 4fcefc30ccef0288ff52fdb3b45219eeac803bb2d9b3d245a11abd1051d86777 |
 | 33-20e3.svg | 19127cfc50dbe86b0cd8d00ab7003612aac803aa30ef966582d260d1224dcd04 |

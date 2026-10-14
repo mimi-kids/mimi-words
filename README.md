@@ -13,11 +13,15 @@ The language toggle (ABC / 中文) chooses the language for everything; Thai is 
 
 ## Modes (inside each category: 👀 ❓ 👂)
 
-1. **Look (👀)** - picture grid; tap a picture to see the word (Chinese with tone-marked pinyin) and hear it;
-   ◀ ▶ to move, "ไทย" button speaks the Thai word.
+1. **Look (👀)** - picture grid; tap a picture to see the word (Chinese with tone-marked pinyin); tap the big
+   picture or 🔊 to hear it; ◀ ▶ to move (silent), "ไทย" button speaks the Thai word.
 2. **Quiz (❓)** - a picture is shown, the child picks 1 of 4 word buttons. Right -> green and the word is
    spoken. Wrong -> the button shakes, the right one turns green and is spoken.
-3. **Listen (👂)** - the word is spoken (🔊 replays it), the child picks 1 of 4 pictures. Same feedback.
+3. **Listen (👂)** - the child taps 🔊 to hear the word, then picks 1 of 4 pictures. Same feedback.
+
+**Sound only after a tap** (owner 2026-10-14): nothing is spoken when a card opens, on ◀ ▶, on a language change
+or when a new question appears; the same code runs on desktop and mobile. Quiz/Listen still speak the word after
+the child taps an answer (feedback to that tap).
 
 Rounds are 10 questions from the current category, most-missed words first, then least-recently-seen.
 Options are 4 different words from the same category; the right one is always there; no two options share a
@@ -40,7 +44,7 @@ After changing any shipped file, bump `CACHE` in `sw.js` so installed copies upd
 
 ```
 node --test tests/                     # 24 unit tests (no npm): data, distractors, queue, progress, streak
-node tools/smoke_test.mjs [shots-dir]  # 24 headless Chrome checks incl. quiz, listen, review, offline reload
+node tools/smoke_test.mjs [shots-dir]  # 27 headless Chrome checks incl. quiz, listen, review, pinyin font, offline
 python3 tools/validate_words.py        # data shape
 python3 tools/check_cedict.py <file>   # Chinese + pinyin vs a local CC-CEDICT file (offline)
 ```
@@ -80,8 +84,10 @@ Latest results: `evidence/unit-tests.txt`, `evidence/smoke-tests.txt`.
 - Chinese and pinyin match CC-CEDICT (100/100 headword + reading, `evidence/cedict-check.txt`); that check does
   not confirm the meaning fits the picture - that is part of the owner review.
 - **No word is reviewed.** English, Thai, Chinese and the category labels are drafts.
-- Four pictures are stand-ins, flagged in `REVIEW.md`: water (droplet), arm (flexed biceps), heart (symbol),
-  pink (pink heart).
+- Pictures still flagged in `REVIEW.md`: water (droplet). Heart is a pink heart by owner decision (heart = love).
+  Colors are self-drawn circles. Arm was replaced by finger (2026-10-14).
+- Pinyin font: the app ships no web font. On the test machine Chrome renders pinyin (incl. ǜ, U+01DC precomposed)
+  with the system font Noto Sans, no fallback needed; phone fonts not checked.
 - The streak uses the device's local date; changing the device clock changes it.
 - Storage keys keep the old working name (`lingolite.v1` / `lingolite.v2`) so existing progress survives the
   rename to Mimi.

@@ -28,7 +28,7 @@
    "th": "ร่างกาย"
   },
   "colors": {
-   "icon": "pictures/twemoji/1f534.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%23E53935'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "en": "Colors",
    "zh": "颜色",
    "th": "สี"
@@ -714,7 +714,7 @@
    "en": "noodles",
    "zh": "面条",
    "pinyin": "miàntiáo",
-   "th": "บะหมี่",
+   "th": "ก๋วยเตี๋ยว",
    "icon": "pictures/twemoji/1f35c.svg",
    "source": {
     "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f35c.svg, CC-BY 4.0",
@@ -847,8 +847,8 @@
    "id": "body-mouth",
    "category": "body",
    "en": "mouth",
-   "zh": "嘴",
-   "pinyin": "zuǐ",
+   "zh": "嘴巴",
+   "pinyin": "zuǐba",
    "th": "ปาก",
    "icon": "pictures/twemoji/1f444.svg",
    "source": {
@@ -934,15 +934,15 @@
    "reviewed": false
   },
   {
-   "id": "body-arm",
+   "id": "body-finger",
    "category": "body",
-   "en": "arm",
-   "zh": "胳膊",
-   "pinyin": "gēbo",
-   "th": "แขน",
-   "icon": "pictures/twemoji/1f4aa.svg",
+   "en": "finger",
+   "zh": "手指",
+   "pinyin": "shǒuzhǐ",
+   "th": "นิ้ว",
+   "icon": "pictures/twemoji/261d.svg",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f4aa.svg, CC-BY 4.0",
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 261d.svg, CC-BY 4.0",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -955,9 +955,9 @@
    "zh": "心",
    "pinyin": "xīn",
    "th": "หัวใจ",
-   "icon": "pictures/twemoji/2764.svg",
+   "icon": "pictures/twemoji/1fa77.svg",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 2764.svg, CC-BY 4.0",
+    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1fa77.svg (pink heart), CC-BY 4.0; owner decision 2026-10-14: heart = love, pink",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -985,9 +985,9 @@
    "zh": "红色",
    "pinyin": "hóngsè",
    "th": "สีแดง",
-   "icon": "pictures/twemoji/1f534.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%23E53935'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f534.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #E53935, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1000,9 +1000,9 @@
    "zh": "蓝色",
    "pinyin": "lánsè",
    "th": "สีน้ำเงิน",
-   "icon": "pictures/twemoji/1f535.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%231E88E5'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f535.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #1E88E5, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1015,9 +1015,9 @@
    "zh": "绿色",
    "pinyin": "lǜsè",
    "th": "สีเขียว",
-   "icon": "pictures/twemoji/1f7e2.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%2343A047'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e2.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #43A047, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1030,9 +1030,9 @@
    "zh": "黄色",
    "pinyin": "huángsè",
    "th": "สีเหลือง",
-   "icon": "pictures/twemoji/1f7e1.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%23FDD835'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e1.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #FDD835, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1045,9 +1045,9 @@
    "zh": "橙色",
    "pinyin": "chéngsè",
    "th": "สีส้ม",
-   "icon": "pictures/twemoji/1f7e0.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%23FB8C00'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e0.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #FB8C00, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1060,9 +1060,9 @@
    "zh": "紫色",
    "pinyin": "zǐsè",
    "th": "สีม่วง",
-   "icon": "pictures/twemoji/1f7e3.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%238E24AA'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e3.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #8E24AA, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1075,9 +1075,9 @@
    "zh": "棕色",
    "pinyin": "zōngsè",
    "th": "สีน้ำตาล",
-   "icon": "pictures/twemoji/1f7e4.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%236D4C41'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f7e4.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #6D4C41, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1090,9 +1090,9 @@
    "zh": "黑色",
    "pinyin": "hēisè",
    "th": "สีดำ",
-   "icon": "pictures/twemoji/26ab.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%23212121'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 26ab.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #212121, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1105,9 +1105,9 @@
    "zh": "白色",
    "pinyin": "báisè",
    "th": "สีขาว",
-   "icon": "pictures/twemoji/26aa.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%23FFFFFF'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 26aa.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #FFFFFF, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1120,9 +1120,9 @@
    "zh": "粉红色",
    "pinyin": "fěnhóngsè",
    "th": "สีชมพู",
-   "icon": "pictures/twemoji/1fa77.svg",
+   "icon": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Ccircle%20cx='18'%20cy='18'%20r='16'%20fill='%23F06292'%20stroke='%23333333'%20stroke-width='1'/%3E%3C/svg%3E",
    "source": {
-    "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1fa77.svg, CC-BY 4.0",
+    "icon": "self-drawn inline SVG circle, fill #F06292, 1px #333333 border (Mimi, 2026-10-14)",
     "zh_pinyin": "Draft by Claude Code; checked against CC-CEDICT (MDBG, 2026-10-13T08:59:07Z): headword present, pinyin matches a listed reading (evidence/cedict-check.txt)",
     "en_th": "DRAFT by Claude Code"
    },
@@ -1374,7 +1374,7 @@
    "en": "toilet",
    "zh": "马桶",
    "pinyin": "mǎtǒng",
-   "th": "โถส้วม",
+   "th": "ชักโครก",
    "icon": "pictures/twemoji/1f6bd.svg",
    "source": {
     "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f6bd.svg, CC-BY 4.0",
@@ -1449,7 +1449,7 @@
    "en": "television",
    "zh": "电视",
    "pinyin": "diànshì",
-   "th": "โทรทัศน์",
+   "th": "ทีวี",
    "icon": "pictures/twemoji/1f4fa.svg",
    "source": {
     "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f4fa.svg, CC-BY 4.0",
@@ -1464,7 +1464,7 @@
    "en": "phone",
    "zh": "手机",
    "pinyin": "shǒujī",
-   "th": "โทรศัพท์มือถือ",
+   "th": "มือถือ",
    "icon": "pictures/twemoji/1f4f1.svg",
    "source": {
     "icon": "Twemoji 15.1.0 (jdecked/twemoji), 1f4f1.svg, CC-BY 4.0",

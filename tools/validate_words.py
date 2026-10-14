@@ -35,7 +35,9 @@ def main():
             errors.append('%s: pinyin has no tone mark' % wid)
         if not THAI.match(w['th']):
             errors.append('%s: th not Thai script' % wid)
-        if not os.path.isfile(os.path.join(ROOT, w['icon'])):
+        if w['icon'].startswith('data:image/svg+xml,'):
+            pass  # self-drawn inline SVG (colors)
+        elif not os.path.isfile(os.path.join(ROOT, w['icon'])):
             errors.append('%s: icon missing %s' % (wid, w['icon']))
         if w['reviewed'] is not False:
             errors.append('%s: reviewed must stay false until the owner reviews' % wid)

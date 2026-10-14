@@ -116,9 +116,25 @@ try {
   check('review first question = most-missed word', (await evaluate(correctId)) === missed[0]);
   await evaluate("document.getElementById('back').click()");
 
+  // ---- pinyin with ü: which font actually renders it (CSS.getPlatformFontsForNode)
+  await evaluate("document.querySelectorAll('#view .tile')[3].click()");
+  await waitFor("document.querySelectorAll('#view .tile').length === 10");
+  await evaluate("document.querySelectorAll('#view .tile')[2].click()");
+  check('green card shows lǜsè', await waitFor("document.getElementById('card-pinyin').textContent === 'lǜsè'"));
+  check('color pictures are inline circles', await evaluate("document.getElementById('card-img').src.startsWith('data:image/svg+xml,')"));
+  await cdp('DOM.enable'); await cdp('CSS.enable');
+  const doc = await cdp('DOM.getDocument', { depth: 0 });
+  const node = await cdp('DOM.querySelector', { nodeId: doc.root.nodeId, selector: '#card-pinyin' });
+  const fonts = (await cdp('CSS.getPlatformFontsForNode', { nodeId: node.nodeId })).fonts;
+  const fontText = fonts.map((f) => `${f.familyName} (${f.glyphCount} glyphs)`).join(', ');
+  check('pinyin ü rendered by one font, no fallback', fonts.length === 1, `(${fontText})`);
+  await sleep(200); await shot('9-green-pinyin');
+  await evaluate("document.getElementById('card-close').click()");
+  await evaluate("document.getElementById('back').click()");
+
   check('service worker active', await waitFor("navigator.serviceWorker.ready.then(r => !!r.active)", 15000));
-  const cached = await evaluate("caches.open('mimi-v7').then(c => c.keys()).then(k => k.length)");
-  check('precache has shell + 100 pictures', cached >= 110, `(${cached} entries)`);
+  const cached = await evaluate("caches.open('mimi-v8').then(c => c.keys()).then(k => k.length)");
+  check('precache has shell + 90 picture files (colors are inline)', cached >= 100, `(${cached} entries)`);
 
   await cdp('Network.emulateNetworkConditions', { offline: true, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });
   await cdp('Page.reload', { ignoreCache: false });

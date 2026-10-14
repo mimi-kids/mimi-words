@@ -1,5 +1,6 @@
 // Mimi - picture-first words for children (Thai speakers) learning English and Chinese.
 // Vanilla JS, no dependencies, no network calls besides loading its own files. Logic lives in logic.js.
+// Sound plays only after a tap (owner 2026-10-14): never on open, navigation, language change or a new question.
 (function () {
   'use strict';
 
@@ -215,10 +216,7 @@
       opts.appendChild(b);
     });
     view.appendChild(opts);
-    if (round.kind === 'listen') {
-      var r = round;
-      setTimeout(function () { if (r === round && !r.locked) speak(label(q.word), state.lang); }, 250);
-    }
+    // No auto-speak (owner 2026-10-14): in Listen the child taps 🔊 to hear the word.
   }
 
   function answer(button, chosen) {
@@ -275,10 +273,10 @@
   function openCard(i) {
     lastFocus = document.activeElement;
     $('card').hidden = false;
-    renderCard(i, true);
+    renderCard(i);
     $('speak').focus();
   }
-  function renderCard(i, say) {
+  function renderCard(i) {
     var n = current.list.length;
     current.index = (i + n) % n;
     var w = current.list[current.index];
@@ -290,7 +288,6 @@
     $('novoice').hidden = canSpeak(state.lang);
     L.recordSeen(state, state.lang, w.id, Date.now());
     save();
-    if (say) speak(label(w), state.lang);
   }
   function closeCard() {
     $('card').hidden = true;
@@ -307,7 +304,7 @@
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].setAttribute('aria-checked', String(buttons[i].dataset.lang === lang));
     }
-    if (!$('card').hidden) renderCard(current.index, true);
+    if (!$('card').hidden) renderCard(current.index);
     else if (screen.name === 'round') startRound(round.kind, round.source);
     else if (screen.name === 'category') showCategory(screen.category);
     else showHome();
@@ -327,8 +324,8 @@
     $('back').addEventListener('click', goBack);
     $('card-close').addEventListener('click', closeCard);
     $('card').addEventListener('click', function (e) { if (e.target === $('card')) closeCard(); });
-    $('prev').addEventListener('click', function () { renderCard(current.index - 1, true); });
-    $('next').addEventListener('click', function () { renderCard(current.index + 1, true); });
+    $('prev').addEventListener('click', function () { renderCard(current.index - 1); });
+    $('next').addEventListener('click', function () { renderCard(current.index + 1); });
     $('speak').addEventListener('click', function () { speak(label(current.list[current.index]), state.lang); });
     $('card-pic').addEventListener('click', function () { speak(label(current.list[current.index]), state.lang); });
     $('card-th').addEventListener('click', function () { speak(current.list[current.index].th, 'th'); });
@@ -348,8 +345,8 @@
         return;
       }
       if (e.key === 'Escape') closeCard();
-      else if (e.key === 'ArrowLeft') renderCard(current.index - 1, true);
-      else if (e.key === 'ArrowRight') renderCard(current.index + 1, true);
+      else if (e.key === 'ArrowLeft') renderCard(current.index - 1);
+      else if (e.key === 'ArrowRight') renderCard(current.index + 1);
     });
   }
 
