@@ -8,6 +8,10 @@
   --tile-border: #f0e2c8;
   --star: #f5a623;
   --shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+  --right: #2e9e4f;
+  --right-bg: #dff5e4;
+  --wrong: #d64545;
+  --wrong-bg: #fbe1e1;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,6 +23,10 @@
     --tile: #26323a;
     --tile-border: #33434c;
     --shadow: 0 3px 0 rgba(0, 0, 0, 0.35);
+    --right: #4cc46f;
+    --right-bg: #1f3d2a;
+    --wrong: #f07070;
+    --wrong-bg: #45252a;
   }
 }
 
@@ -114,3 +122,38 @@ main { padding: 8px 16px calc(24px + env(safe-area-inset-bottom)); max-width: 96
 @media (prefers-reduced-motion: reduce) {
   .tile:active, .round:active, .lang:active { transform: none; }
 }
+
+/* ---- modes, rounds ---- */
+.modes { display: flex; justify-content: center; gap: 12px; margin: 4px 0 14px; }
+.mode {
+  width: 72px; height: 60px; border-radius: 20px; font-size: 30px;
+  border: 3px solid var(--tile-border); background: var(--tile); box-shadow: var(--shadow);
+}
+.mode.on { background: var(--accent); border-color: var(--accent); }
+.progress { text-align: center; font-size: 20px; font-weight: 700; color: var(--muted); }
+.stage { display: grid; place-items: center; margin: 8px 0 16px; min-height: 180px; }
+.stage img { width: min(48vw, 220px); height: auto; }
+.options {
+  display: grid; gap: 14px; grid-template-columns: 1fr 1fr;
+  max-width: 560px; margin: 0 auto;
+}
+.opt {
+  min-height: 84px; border-radius: 22px; padding: 8px;
+  border: 4px solid var(--tile-border); background: var(--tile); box-shadow: var(--shadow);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+}
+.opt .opt-word { font-size: clamp(24px, 6.5vw, 34px); font-weight: 800; }
+.opt .opt-pinyin { font-size: 18px; color: var(--muted); }
+.opt.pic { aspect-ratio: 1; min-height: 0; }
+.opt.pic img { width: 70%; height: auto; pointer-events: none; }
+.opt.right { border-color: var(--right); background: var(--right-bg); }
+.opt.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
+.shake { animation: shake 0.45s; }
+@keyframes shake {
+  20%, 60% { transform: translateX(-10px); }
+  40%, 80% { transform: translateX(10px); }
+}
+@media (prefers-reduced-motion: reduce) { .shake { animation: none; } }
+.done { display: flex; flex-direction: column; align-items: center; gap: 24px; margin-top: 40px; }
+.score { font-size: 56px; font-weight: 800; }
+.listen { width: 120px; height: 120px; font-size: 54px; }

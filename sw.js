@@ -1,10 +1,11 @@
 // LingoLite service worker: precache everything on install, then serve cache-first (works offline).
 // Bump CACHE when any file changes so clients pick up the new version.
-var CACHE = 'lingolite-v1';
+var CACHE = 'lingolite-v2';
 var SHELL = [
   './',
   'index.html',
   'style.css',
+  'logic.js',
   'app.js',
   'manifest.webmanifest',
   'data/words.json',

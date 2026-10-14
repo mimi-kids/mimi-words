@@ -1,37 +1,29 @@
 // LingoLite - picture-first words for children (Thai speakers) learning English and Chinese.
-// Vanilla JS, no dependencies, no network calls besides loading its own files.
+// Vanilla JS, no dependencies, no network calls besides loading its own files. Logic lives in logic.js.
 (function () {
   'use strict';
 
-  var STORE_KEY = 'lingolite.v1';
+  var L = window.LingoLogic;
   var VOICE_LANG = { en: 'en-US', zh: 'zh-CN', th: 'th-TH' };
+  var ROUND_SIZE = 10;
 
-  var data = null;            // data/words.json
-  var state = loadState();    // { lang: 'en'|'zh', seen: { en: {id: 1}, zh: {id: 1} } }
-  var current = { category: null, list: [], index: 0 };
+  var data = null;                 // data/words.json
+  var store = storage();
+  var state = L.loadState(store);  // see logic.js emptyState()
+  var screen = { name: 'home', category: null };
+  var current = { list: [], index: 0 };   // word card
+  var round = null;                // { kind, source, title, questions, index, score, locked }
 
   var $ = function (id) { return document.getElementById(id); };
   var view = $('view');
 
-  // ------------------------------------------------------------ storage (per device only)
-  function loadState() {
-    var fallback = { lang: 'en', seen: { en: {}, zh: {} } };
-    try {
-      var raw = window.localStorage.getItem(STORE_KEY);
-      if (!raw) return fallback;
-      var s = JSON.parse(raw);
-      if (s.lang !== 'en' && s.lang !== 'zh') s.lang = 'en';
-      s.seen = s.seen || {};
-      s.seen.en = s.seen.en || {};
-      s.seen.zh = s.seen.zh || {};
-      return s;
-    } catch (e) {
-      return fallback;
+  function storage() {
+    try { var s = window.localStorage; s.getItem('x'); return s; } catch (e) {
+      var mem = {};  // private mode: progress lives until the tab closes
+      return { getItem: function (k) { return mem[k] || null; }, setItem: function (k, v) { mem[k] = String(v); } };
     }
   }
-  function saveState() {
-    try { window.localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) { /* private mode */ }
-  }
+  function save() { L.saveState(store, state); }
 
   // ------------------------------------------------------------ speech (device voices only)
   var voices = [];
@@ -87,17 +79,22 @@
   function wordsIn(category) {
     return data.words.filter(function (w) { return w.category === category; });
   }
-  function seenCount(list) {
-    var seen = state.seen[state.lang];
-    return list.filter(function (w) { return seen[w.id]; }).length;
+  function label(w) { return L.labelOf(w, state.lang); }
+  function wordButtonContent(b, w) {
+    b.appendChild(el('span', 'opt-word', label(w)));
+    if (state.lang === 'zh') b.appendChild(el('span', 'opt-pinyin', w.pinyin));
   }
-  function label(w) { return state.lang === 'zh' ? w.zh : w.en; }
+  function clear() {
+    view.textContent = '';
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+  }
 
   // ------------------------------------------------------------ screens
   function showHome() {
-    current.category = null;
+    screen = { name: 'home', category: null };
+    round = null;
     $('back').hidden = true;
-    view.textContent = '';
+    clear();
     var grid = el('div', 'grid');
     data.categories.forEach(function (c) {
       var meta = data.category_labels[c];
@@ -106,25 +103,43 @@
       b.setAttribute('aria-label', meta.th + ' / ' + meta[state.lang]);
       b.appendChild(picture(meta.icon));
       b.appendChild(el('span', 'label', meta[state.lang]));
-      b.appendChild(el('span', 'count', '⭐ ' + seenCount(list) + '/' + list.length));
+      b.appendChild(el('span', 'count', '⭐ ' + L.seenCount(state, state.lang, list) + '/' + list.length));
       b.addEventListener('click', function () { showCategory(c); });
       grid.appendChild(b);
     });
     view.appendChild(grid);
   }
 
+  function modeBar(c, active) {
+    var bar = el('div', 'modes');
+    [['learn', '👀', 'ดูภาพ / Look'], ['quiz', '❓', 'ทายคำ / Quiz']].forEach(function (m) {
+      var b = el('button', 'mode' + (m[0] === active ? ' on' : ''));
+      b.setAttribute('aria-label', m[2]);
+      b.setAttribute('aria-pressed', String(m[0] === active));
+      b.appendChild(el('span', null, m[1]));
+      b.addEventListener('click', function () {
+        if (m[0] === 'learn') showCategory(c);
+        else startRound(m[0], c);
+      });
+      bar.appendChild(b);
+    });
+    return bar;
+  }
+
   function showCategory(c) {
-    current.category = c;
+    screen = { name: 'category', category: c };
+    round = null;
     current.list = wordsIn(c);
     $('back').hidden = false;
-    view.textContent = '';
+    clear();
+    view.appendChild(modeBar(c, 'learn'));
     var grid = el('div', 'grid words');
-    var seen = state.seen[state.lang];
+    var p = state.progress[state.lang];
     current.list.forEach(function (w, i) {
       var b = el('button', 'tile');
       b.setAttribute('aria-label', w.th);
       b.appendChild(picture(w.icon));
-      if (seen[w.id]) b.appendChild(el('span', 'star', '★'));
+      if (p[w.id] && p[w.id].seen > 0) b.appendChild(el('span', 'star', '★'));
       b.addEventListener('click', function () { openCard(i); });
       grid.appendChild(b);
     });
@@ -132,7 +147,90 @@
     window.scrollTo(0, 0);
   }
 
-  // ------------------------------------------------------------ word card
+  // ------------------------------------------------------------ rounds (quiz)
+  // source = a category name. 10 questions, most-missed words first.
+  function startRound(kind, source) {
+    var pool = wordsIn(source);
+    var words = L.roundWords(state, state.lang, pool, ROUND_SIZE);
+    round = {
+      kind: kind, source: source, index: 0, score: 0, locked: false,
+      questions: words.map(function (w) { return { word: w, options: L.pickOptions(data.words, w, state.lang) }; })
+    };
+    screen = { name: 'round', category: source };
+    $('back').hidden = false;
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    clear();
+    var q = round.questions[round.index];
+    round.locked = false;
+    view.appendChild(modeBar(round.source, round.kind));
+    view.appendChild(el('div', 'progress', (round.index + 1) + ' / ' + round.questions.length));
+    var stage = el('div', 'stage');
+    stage.appendChild(picture(q.word.icon));
+    view.appendChild(stage);
+    var opts = el('div', 'options');
+    q.options.forEach(function (w) {
+      var b = el('button', 'opt');
+      wordButtonContent(b, w);
+      b.dataset.id = w.id;
+      b.addEventListener('click', function () { answer(b, w); });
+      opts.appendChild(b);
+    });
+    view.appendChild(opts);
+  }
+
+  function answer(button, chosen) {
+    if (round.locked) return;
+    round.locked = true;
+    var q = round.questions[round.index];
+    var ok = chosen.id === q.word.id;
+    L.recordAnswer(state, state.lang, q.word.id, ok, Date.now());
+    save();
+    var buttons = view.querySelectorAll('.opt');
+    for (var i = 0; i < buttons.length; i++) {
+      if (buttons[i].dataset.id === q.word.id) buttons[i].classList.add('right');
+    }
+    if (ok) {
+      round.score += 1;
+    } else {
+      button.classList.add('wrong', 'shake');
+    }
+    speak(label(q.word), state.lang);
+    var r = round;
+    setTimeout(function () { nextQuestion(r); }, ok ? 1300 : 2200);
+  }
+
+  function nextQuestion(r) {
+    if (!round || r !== round) return;   // the child left or restarted the round meanwhile
+    round.index += 1;
+    if (round.index < round.questions.length) renderQuestion();
+    else showRoundEnd();
+  }
+
+  function showRoundEnd() {
+    clear();
+    var box = el('div', 'done');
+    box.appendChild(el('div', 'score', '⭐ ' + round.score + ' / ' + round.questions.length));
+    var row = el('div', 'row');
+    var again = el('button', 'round big');
+    again.setAttribute('aria-label', 'อีกครั้ง / Again');
+    again.appendChild(el('span', null, '🔁'));
+    var kind = round.kind, source = round.source;
+    again.addEventListener('click', function () { startRound(kind, source); });
+    var home = el('button', 'round big');
+    home.setAttribute('aria-label', 'หน้าแรก / Home');
+    home.appendChild(el('span', null, '🏠'));
+    home.addEventListener('click', showHome);
+    row.appendChild(again);
+    row.appendChild(home);
+    box.appendChild(row);
+    view.appendChild(box);
+    again.focus();
+  }
+
+  // ------------------------------------------------------------ word card (learn mode)
   var lastFocus = null;
   function openCard(i) {
     lastFocus = document.activeElement;
@@ -150,29 +248,33 @@
     $('card-pinyin').textContent = state.lang === 'zh' ? w.pinyin : '';
     $('card-th').textContent = 'ไทย: ' + w.th;
     $('novoice').hidden = canSpeak(state.lang);
-    if (!state.seen[state.lang][w.id]) {
-      state.seen[state.lang][w.id] = 1;
-      saveState();
-    }
+    L.recordSeen(state, state.lang, w.id, Date.now());
+    save();
     if (say) speak(label(w), state.lang);
   }
   function closeCard() {
     $('card').hidden = true;
     if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-    if (current.category) showCategory(current.category);
+    if (screen.name === 'category') showCategory(screen.category);
     if (lastFocus && document.body.contains(lastFocus)) lastFocus.focus();
   }
 
   // ------------------------------------------------------------ language
   function setLang(lang) {
     state.lang = lang;
-    saveState();
+    save();
     var buttons = document.querySelectorAll('.lang');
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].setAttribute('aria-checked', String(buttons[i].dataset.lang === lang));
     }
     if (!$('card').hidden) renderCard(current.index, true);
-    else if (current.category) showCategory(current.category);
+    else if (screen.name === 'round') startRound(round.kind, round.source);
+    else if (screen.name === 'category') showCategory(screen.category);
+    else showHome();
+  }
+
+  function goBack() {
+    if (screen.name === 'round' && data.categories.indexOf(screen.category) >= 0) showCategory(screen.category);
     else showHome();
   }
 
@@ -182,7 +284,7 @@
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener('click', function (e) { setLang(e.currentTarget.dataset.lang); });
     }
-    $('back').addEventListener('click', showHome);
+    $('back').addEventListener('click', goBack);
     $('card-close').addEventListener('click', closeCard);
     $('card').addEventListener('click', function (e) { if (e.target === $('card')) closeCard(); });
     $('prev').addEventListener('click', function () { renderCard(current.index - 1, true); });
@@ -193,8 +295,10 @@
     $('info').addEventListener('click', function () { $('credits').hidden = false; $('credits-close').focus(); });
     $('credits-close').addEventListener('click', function () { $('credits').hidden = true; });
     $('reset').addEventListener('click', function () {
-      state.seen = { en: {}, zh: {} };
-      saveState();
+      var lang = state.lang;
+      state = L.emptyState();
+      state.lang = lang;
+      save();
       $('credits').hidden = true;
       showHome();
     });
