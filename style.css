@@ -144,8 +144,9 @@ main { padding: 8px 16px calc(24px + env(safe-area-inset-bottom)); max-width: 96
 }
 .opt .opt-word { font-size: clamp(24px, 6.5vw, 34px); font-weight: 800; }
 .opt .opt-pinyin { font-size: 18px; color: var(--muted); }
-.opt.pic { aspect-ratio: 1; min-height: 0; }
-.opt.pic img { width: 70%; height: auto; pointer-events: none; }
+.options.pics { max-width: min(400px, 100%); }
+.opt.picopt { aspect-ratio: 1; min-height: 0; min-width: 0; }
+.opt.picopt img { width: 70%; height: auto; pointer-events: none; }
 .opt.right { border-color: var(--right); background: var(--right-bg); }
 .opt.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
 .shake { animation: shake 0.45s; }

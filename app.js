@@ -201,9 +201,9 @@
       stage.appendChild(picture(q.word.icon));
     }
     view.appendChild(stage);
-    var opts = el('div', 'options');
+    var opts = el('div', round.kind === 'listen' ? 'options pics' : 'options');
     q.options.forEach(function (w, i) {
-      var b = el('button', round.kind === 'listen' ? 'opt pic' : 'opt');
+      var b = el('button', round.kind === 'listen' ? 'opt picopt' : 'opt');
       if (round.kind === 'listen') {
         b.setAttribute('aria-label', 'ภาพ ' + (i + 1) + ' / picture ' + (i + 1));
         b.appendChild(picture(w.icon));
