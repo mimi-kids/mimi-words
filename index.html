@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2bb0a6">
+  <meta name="description" content="Picture words for children: English and Chinese">
+  <title>LingoLite</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/app.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/app-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <button id="back" class="round" aria-label="ย้อนกลับ / Back" hidden>
+      <span aria-hidden="true">←</span>
+    </button>
+    <div class="langs" role="radiogroup" aria-label="ภาษา / Language">
+      <button class="lang" data-lang="en" role="radio" aria-checked="true">ABC</button>
+      <button class="lang" data-lang="zh" role="radio" aria-checked="false">中文</button>
+    </div>
+    <button id="info" class="round" aria-label="เครดิต / Credits"><span aria-hidden="true">i</span></button>
+  </header>
+
+  <main id="view" aria-live="polite"></main>
+
+  <div id="card" class="overlay" role="dialog" aria-modal="true" aria-labelledby="card-word" hidden>
+    <div class="card">
+      <button id="card-close" class="round close" aria-label="ปิด / Close"><span aria-hidden="true">✕</span></button>
+      <button id="card-pic" class="pic" aria-label="ฟังอีกครั้ง / Hear again"><img id="card-img" alt=""></button>
+      <div id="card-word" class="word"></div>
+      <div id="card-pinyin" class="pinyin"></div>
+      <div class="row">
+        <button id="prev" class="round big" aria-label="ก่อนหน้า / Previous"><span aria-hidden="true">◀</span></button>
+        <button id="speak" class="round big speak" aria-label="ฟัง / Listen"><span aria-hidden="true">🔊</span></button>
+        <button id="next" class="round big" aria-label="ถัดไป / Next"><span aria-hidden="true">▶</span></button>
+      </div>
+      <button id="card-th" class="thai" aria-label="ฟังภาษาไทย / Hear Thai"></button>
+      <div id="novoice" class="novoice" hidden>🔇</div>
+    </div>
+  </div>
+
+  <div id="credits" class="overlay" role="dialog" aria-modal="true" aria-labelledby="credits-title" hidden>
+    <div class="card credits">
+      <button id="credits-close" class="round close" aria-label="ปิด / Close"><span aria-hidden="true">✕</span></button>
+      <h2 id="credits-title">Credits</h2>
+      <p>Pictures: <a href="https://github.com/jdecked/twemoji">Twemoji</a> 15.1.0,
+        © Twitter, Inc and other contributors, licensed
+        <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.</p>
+      <p>Words: draft, waiting for parent review. Chinese words and pinyin still to be checked against
+        CC-CEDICT.</p>
+      <p>No ads, no tracking, no accounts. Progress stays on this device.</p>
+      <button id="reset" class="pill">ล้างดาว / Reset stars</button>
+    </div>
+  </div>
+
+  <noscript>Please turn on JavaScript.</noscript>
+  <script src="app.js"></script>
+</body>
+</html>

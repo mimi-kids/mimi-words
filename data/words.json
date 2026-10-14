@@ -8,6 +8,45 @@
   "numbers",
   "home"
  ],
+ "category_labels": {
+  "animals": {
+   "icon": "pictures/twemoji/1f408.svg",
+   "en": "Animals",
+   "zh": "动物",
+   "th": "สัตว์"
+  },
+  "food": {
+   "icon": "pictures/twemoji/1f34e.svg",
+   "en": "Food",
+   "zh": "食物",
+   "th": "อาหาร"
+  },
+  "body": {
+   "icon": "pictures/twemoji/270b.svg",
+   "en": "Body",
+   "zh": "身体",
+   "th": "ร่างกาย"
+  },
+  "colors": {
+   "icon": "pictures/twemoji/1f534.svg",
+   "en": "Colors",
+   "zh": "颜色",
+   "th": "สี"
+  },
+  "numbers": {
+   "icon": "pictures/twemoji/31-20e3.svg",
+   "en": "Numbers",
+   "zh": "数字",
+   "th": "ตัวเลข"
+  },
+  "home": {
+   "icon": "pictures/twemoji/1f3e0.svg",
+   "en": "Home",
+   "zh": "家",
+   "th": "บ้าน"
+  }
+ },
+ "category_labels_reviewed": false,
  "words": [
   {
    "id": "animal-cat",
