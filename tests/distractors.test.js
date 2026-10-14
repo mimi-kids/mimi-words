@@ -54,3 +54,13 @@ test('correct answer position varies (not always first)', () => {
   }
   assert.equal(positions.size, 4);
 });
+
+test('Thai mode: every word, 25 seeds: 4 options with 4 distinct Thai labels', () => {
+  for (const w of data.words) {
+    for (let seed = 1; seed <= 25; seed++) {
+      const opts = L.pickOptions(data.words, w, 'th', rng(seed));
+      checkOptions(opts, w, 'th');
+      for (const o of opts) assert.match(L.labelOf(o, 'th'), /^[฀-๿ ]+$/, 'Thai script');
+    }
+  }
+});

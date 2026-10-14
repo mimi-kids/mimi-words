@@ -1,7 +1,9 @@
 # Mimi
 
-Picture-first vocabulary app for children who speak Thai and are learning English and Mandarin.
-The language toggle (ABC / 中文) chooses the language for everything; Thai is a small helper only.
+Picture-first vocabulary app for children learning English, Mandarin and Thai.
+The language toggle (ABC / 中文 / Thai) chooses the learning language for everything. In English and Chinese mode Thai
+is a small helper only; in **Thai mode** the card shows the Thai word large with the English word small below it (no
+romanization), and Quiz / Listen ask and answer in Thai (Thai voice th-TH).
 
 - Installable PWA, plain static files, **no build step, no dependencies**: `index.html`, `style.css`,
   `logic.js` (pure rules, shared with the tests), `app.js`, `sw.js`, `manifest.webmanifest`,
@@ -34,7 +36,7 @@ Rounds are 10 questions from the current category, most-missed words first, then
 Options are 4 different words from the same category; the right one is always there; no two options share a
 label or a picture.
 
-**Progress** (per language): per-word seen / correct / wrong counts and last-seen time; stars per category;
+**Progress** (per language: en / zh / th; English and Chinese progress saved before Thai existed is kept): per-word seen / correct / wrong counts and last-seen time; stars per category;
 a daily streak (🔥, local calendar date); a **review** tile (🔁) on the home screen that runs a Quiz over the
 review queue (most-missed first, then least-recently-seen).
 
@@ -50,8 +52,8 @@ After changing any shipped file, bump `CACHE` in `sw.js` so installed copies upd
 ## Tests
 
 ```
-node --test tests/                     # 32 unit tests (no npm): data, distractors, queue, progress, streak, voices
-node tools/smoke_test.mjs [shots-dir]  # 31 headless Chrome checks incl. quiz, listen, review, pinyin font, settings, offline
+node --test tests/                     # 37 unit tests (no npm): data, distractors, queue, progress, streak, voices, Thai
+node tools/smoke_test.mjs [shots-dir]  # 36 headless Chrome checks incl. quiz, listen, review, pinyin font, settings, Thai, offline
 python3 tools/validate_words.py        # data shape
 python3 tools/check_cedict.py <file>   # Chinese + pinyin vs a local CC-CEDICT file (offline)
 ```

@@ -284,8 +284,12 @@
     var w = current.list[current.index];
     $('card-img').src = w.icon;
     $('card-word').textContent = label(w);
-    $('card-word').lang = state.lang === 'zh' ? 'zh-CN' : 'en';
-    $('card-pinyin').textContent = state.lang === 'zh' ? w.pinyin : '';
+    $('card-word').lang = VOICE_LANG[state.lang];
+    // helper line: pinyin in Chinese mode, the English word (small) in Thai mode, nothing in English mode
+    $('card-pinyin').textContent = state.lang === 'zh' ? w.pinyin : state.lang === 'th' ? w.en : '';
+    $('card-pinyin').lang = state.lang === 'th' ? 'en' : '';
+    // the Thai helper button is redundant in Thai mode (the word itself is Thai)
+    $('card-th').hidden = state.lang === 'th';
     $('card-th').textContent = 'ไทย: ' + w.th;
     $('novoice').hidden = canSpeak(state.lang);
     L.recordSeen(state, state.lang, w.id, Date.now());
@@ -315,7 +319,7 @@
 
   // ------------------------------------------------------------ settings (parent-facing, plain text)
   var SAMPLE = { en: 'cat', zh: '猫', th: 'แมว' };
-  var LANG_NAME = { en: 'English', zh: '中文', th: 'ไทย' };
+  var LANG_NAME = { en: 'English', zh: '中文', th: 'Thai' };
   function showSettings() {
     screen = { name: 'settings', category: null };
     round = null;

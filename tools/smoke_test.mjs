@@ -147,8 +147,26 @@ try {
   await sleep(200); await shot('10-settings');
   await evaluate("document.getElementById('back').click()");
 
+  // ---- Thai learning mode
+  await evaluate("document.querySelector('.lang[data-lang=th]').click()");
+  check('Thai mode selected; selector label is "Thai"', await waitFor("(() => { const b = document.querySelector('.lang[aria-checked=true]'); return b && b.dataset.lang === 'th' && b.textContent === 'Thai'; })()"));
+  check('heading in Thai mode reads "Thai" (Latin letters)', await evaluate("document.querySelector('.lang[data-lang=th]').textContent === 'Thai'"));
+  await evaluate("document.querySelector('#view .tile').click()");
+  await waitFor("document.querySelectorAll('#view .tile').length === 25");
+  await evaluate("document.querySelector('#view .tile').click()");
+  check('Thai card: Thai word large, English helper small, no Thai helper button', await waitFor("document.getElementById('card-word').textContent === 'แมว' && document.getElementById('card-pinyin').textContent === 'cat' && document.getElementById('card-th').hidden"));
+  await sleep(200); await shot('11-thai-card');
+  await evaluate("document.getElementById('card-close').click()");
+  await evaluate("document.querySelectorAll('.modes .mode')[1].click()");
+  check('Thai quiz: 4 distinct Thai options', await waitFor("(() => { const t = [...document.querySelectorAll('.opt .opt-word')].map(e => e.textContent); return t.length === 4 && new Set(t).size === 4 && t.every(x => /^[\u0e00-\u0e7f ]+$/.test(x)); })()"));
+  await sleep(200); await shot('12-thai-quiz');
+  const saved3 = await evaluate("JSON.parse(localStorage.getItem('lingolite.v2'))");
+  check('progress keyed per language (th has the cat, en/zh kept)', saved3.lang === 'th' && saved3.progress.th['animal-cat'].seen >= 1 && saved3.progress.zh['animal-cat'].seen >= 1 && saved3.progress.en['animal-cat'].seen >= 1);
+  await evaluate("document.getElementById('back').click()");
+  await evaluate("document.getElementById('back').click()");
+
   check('service worker active', await waitFor("navigator.serviceWorker.ready.then(r => !!r.active)", 15000));
-  const cached = await evaluate("caches.open('mimi-v9').then(c => c.keys()).then(k => k.length)");
+  const cached = await evaluate("caches.open('mimi-v10').then(c => c.keys()).then(k => k.length)");
   check('precache has shell + 90 picture files (colors are inline)', cached >= 100, `(${cached} entries)`);
 
   await cdp('Network.emulateNetworkConditions', { offline: true, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });

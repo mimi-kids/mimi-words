@@ -8,7 +8,7 @@
 
   var STORE_KEY = 'lingolite.v2';
   var OLD_KEY = 'lingolite.v1';
-  var LANGS = ['en', 'zh'];
+  var LANGS = ['en', 'zh', 'th'];   // learning languages; progress and streak are kept per language
 
   // ------------------------------------------------------------ random helpers (rng injectable for tests)
   function shuffle(list, rng) {
@@ -21,7 +21,7 @@
     return a;
   }
 
-  function labelOf(word, lang) { return lang === 'zh' ? word.zh : word.en; }
+  function labelOf(word, lang) { return lang === 'zh' ? word.zh : lang === 'th' ? word.th : word.en; }
 
   // ------------------------------------------------------------ distractors
   // 4 distinct options from the correct word's category: the correct one is present, and no two options
@@ -126,14 +126,14 @@
     try {
       if (raw) {
         var v = JSON.parse(raw);
-        if (v.lang === 'en' || v.lang === 'zh') s.lang = v.lang;
+        if (LANGS.indexOf(v.lang) >= 0) s.lang = v.lang;
         LANGS.forEach(function (l) {
           if (v.progress && v.progress[l]) s.progress[l] = v.progress[l];
           if (v.streak && v.streak[l]) s.streak[l] = v.streak[l];
         });
       } else if (old) {  // v1 stored only { lang, seen: { en: {id: 1}, zh: {...} } }
         var o = JSON.parse(old);
-        if (o.lang === 'en' || o.lang === 'zh') s.lang = o.lang;
+        if (LANGS.indexOf(o.lang) >= 0) s.lang = o.lang;
         LANGS.forEach(function (l) {
           Object.keys((o.seen && o.seen[l]) || {}).forEach(function (id) {
             s.progress[l][id] = { seen: 1, correct: 0, wrong: 0, last: 0 };
@@ -199,7 +199,7 @@
   return {
     SPEECH: SPEECH, VOICE_PREFS: VOICE_PREFS, SETTINGS_KEY: SETTINGS_KEY, chooseVoice: chooseVoice,
     defaultSettings: defaultSettings, loadSettings: loadSettings, saveSettings: saveSettings,
-    STORE_KEY: STORE_KEY, shuffle: shuffle, labelOf: labelOf, pickOptions: pickOptions,
+    LANGS: LANGS, STORE_KEY: STORE_KEY, shuffle: shuffle, labelOf: labelOf, pickOptions: pickOptions,
     emptyState: emptyState, recordSeen: recordSeen, recordAnswer: recordAnswer, seenCount: seenCount,
     reviewQueue: reviewQueue, roundWords: roundWords, localDay: localDay, previousDay: previousDay,
     touchStreak: touchStreak, currentStreak: currentStreak, loadState: loadState, saveState: saveState

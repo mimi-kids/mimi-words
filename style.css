@@ -50,11 +50,12 @@ button:focus-visible { outline: 4px solid var(--accent); outline-offset: 3px; }
 }
 .langs { display: flex; gap: 8px; margin: 0 auto; }
 .lang {
-  min-width: 96px; min-height: 56px; padding: 0 18px;
+  min-width: 76px; min-height: 56px; padding: 0 12px;
   border-radius: 28px; border: 3px solid var(--tile-border);
-  background: var(--tile); font-size: 24px; font-weight: 700;
+  background: var(--tile); font-size: 22px; font-weight: 700;
   box-shadow: var(--shadow);
 }
+@media (max-width: 380px) { .lang { min-width: 0; padding: 0 10px; font-size: 19px; } .langs { gap: 6px; } }
 .lang[aria-checked="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
 
 .round {
