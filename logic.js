@@ -196,7 +196,24 @@
     try { storage.setItem(SETTINGS_KEY, JSON.stringify(settings)); return true; } catch (e) { return false; }
   }
 
+  // ------------------------------------------------------------ pre-generated audio (pilot)
+  // index: { en: { wordId: 'audio/en/wordId.mp3' }, zh: {...}, th: {...} } built from audio/manifest.json.
+  function audioIndex(manifest) {
+    var idx = {};
+    LANGS.forEach(function (l) { idx[l] = {}; });
+    ((manifest && manifest.clips) || []).forEach(function (c) {
+      if (idx[c.lang] && c.id && c.file) idx[c.lang][c.id] = c.file;
+    });
+    return idx;
+  }
+  // Playback chooser: a pre-generated file when the manifest lists one, otherwise device text-to-speech.
+  function chooseAudio(index, lang, wordId) {
+    var f = index && index[lang] && index[lang][wordId];
+    return f ? { kind: 'file', src: f } : { kind: 'tts' };
+  }
+
   return {
+    audioIndex: audioIndex, chooseAudio: chooseAudio,
     SPEECH: SPEECH, VOICE_PREFS: VOICE_PREFS, SETTINGS_KEY: SETTINGS_KEY, chooseVoice: chooseVoice,
     defaultSettings: defaultSettings, loadSettings: loadSettings, saveSettings: saveSettings,
     LANGS: LANGS, STORE_KEY: STORE_KEY, shuffle: shuffle, labelOf: labelOf, pickOptions: pickOptions,

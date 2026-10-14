@@ -136,6 +136,7 @@ try {
   await waitFor("!!document.querySelector('.gear')");
   await evaluate("document.querySelector('.gear').click()");
   check('settings: 3 voice dropdowns + test buttons', await waitFor("document.querySelectorAll('.settings select').length === 3 && document.querySelectorAll('.settings .set-row .pill').length === 3"));
+  check('settings: audio source shown per language (no audio yet -> TTS)', await evaluate("['en','zh','th'].every(l => document.getElementById('audio-source-' + l).textContent === 'เสียง: TTS')"));
   check('settings: rate slider 0.5-1.0, default 0.75', await evaluate("(() => { const r = document.getElementById('rate'); return r.min === '0.5' && r.max === '1' && Number(r.value) === 0.75; })()"));
   await evaluate("(() => { const r = document.getElementById('rate'); r.value = '0.6'; r.dispatchEvent(new Event('input')); })()");
   check('settings saved in localStorage', await evaluate("JSON.parse(localStorage.getItem('mimi.settings.v1')).rate === 0.6"));
@@ -166,7 +167,7 @@ try {
   await evaluate("document.getElementById('back').click()");
 
   check('service worker active', await waitFor("navigator.serviceWorker.ready.then(r => !!r.active)", 15000));
-  const cached = await evaluate("caches.open('mimi-v10').then(c => c.keys()).then(k => k.length)");
+  const cached = await evaluate("caches.open('mimi-v11').then(c => c.keys()).then(k => k.length)");
   check('precache has shell + 90 picture files (colors are inline)', cached >= 100, `(${cached} entries)`);
 
   await cdp('Network.emulateNetworkConditions', { offline: true, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });

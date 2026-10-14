@@ -1,4 +1,4 @@
-# node tools/smoke_test.mjs   (headless Google Chrome 155.0.8059.39, 412x915 viewport, 2026-10-14T11:26:45Z)
+# node tools/smoke_test.mjs   (headless Google Chrome 155.0.8059.39, 412x915 viewport, 2026-10-14T12:31:11Z)
 # Desktop headless only: no phone, no audio output verified.
 ok   home shows 6 categories 
 ok   animals grid shows 25 pictures 
@@ -24,6 +24,7 @@ ok   green card shows lǜsè
 ok   color pictures are inline circles 
 ok   pinyin ü rendered by one font, no fallback (Noto Sans (4 glyphs))
 ok   settings: 3 voice dropdowns + test buttons 
+ok   settings: audio source shown per language (no audio yet -> TTS) 
 ok   settings: rate slider 0.5-1.0, default 0.75 
 ok   settings saved in localStorage 
 ok   settings reset restores 0.75 
@@ -37,5 +38,5 @@ ok   service worker active
 ok   precache has shell + 90 picture files (colors are inline) (100 entries)
 ok   offline reload still shows home 
 ok   offline picture served from cache 
-SMOKE PASS (36 checks)
+SMOKE PASS (37 checks)
 exit=0

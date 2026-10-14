@@ -185,3 +185,4 @@ main { padding: 8px 16px calc(24px + env(safe-area-inset-bottom)); max-width: 96
 .set-row input[type=range] { flex: 1 1 200px; }
 .voice-list { white-space: pre-wrap; word-break: break-word; font-size: 14px; background: var(--tile);
   border: 2px solid var(--tile-border); border-radius: 12px; padding: 10px; user-select: text; }
+.audio-source { font-size: 15px; color: var(--muted); }

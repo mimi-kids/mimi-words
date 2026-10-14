@@ -28,6 +28,20 @@ Premwadee, any th-TH); with no match the browser default voice speaks. **Setting
 for parents): a voice dropdown per language listing this device's voices with a ฟัง test button, a rate slider
 0.5-1.0, "คืนค่าเดิม" to reset, and the device voice list to copy (see `evidence/voices.md`). Saved in localStorage.
 
+**Pre-generated audio (pilot, 2026-10-14).** When `audio/manifest.json` lists a clip for the word and language, a
+tap plays that MP3 instead of device text-to-speech; otherwise (or if the file cannot play) device text-to-speech is
+used as before. The service worker precaches every file in the manifest, so clips work offline. Settings shows
+"เสียง: ไฟล์ (n)" or "เสียง: TTS" per language.
+- Provider: Google Cloud Text-to-Speech (REST v1), MP3, speakingRate 0.8, pitch +1.0, 24 kHz.
+- Voices: chosen automatically per language (en-US, cmn-CN, th-TH): the best FEMALE voice by tier
+  Neural2 > Wavenet > Standard, ties by name; the chosen names are printed and stored in the manifest.
+- **License note: pilot; commercial redistribution rights not yet confirmed.** Do not ship the clips publicly until
+  that is checked.
+- Regenerate (owner's terminal; the key is read only from the environment, never printed or written to a file):
+  `GOOGLE_TTS_API_KEY=... python3 tools/gen_audio.py --sample` (3 clips) or without `--sample` (all 300, about
+  1 s apart, stops on the first error, idempotent: existing files are skipped). Full set: 1,181 characters.
+- Check: `node tools/validate_audio.js` (all 300 clips, sha256) or `--partial` (only the clips present).
+
 **Sound only after a tap** (owner 2026-10-14): nothing is spoken when a card opens, on ◀ ▶, on a language change
 or when a new question appears; the same code runs on desktop and mobile. Quiz/Listen still speak the word after
 the child taps an answer (feedback to that tap).
@@ -52,8 +66,9 @@ After changing any shipped file, bump `CACHE` in `sw.js` so installed copies upd
 ## Tests
 
 ```
-node --test tests/                     # 37 unit tests (no npm): data, distractors, queue, progress, streak, voices, Thai
-node tools/smoke_test.mjs [shots-dir]  # 36 headless Chrome checks incl. quiz, listen, review, pinyin font, settings, Thai, offline
+node --test tests/                     # 41 unit tests (no npm): data, distractors, queue, progress, streak, voices, Thai, audio
+node tools/smoke_test.mjs [shots-dir]  # 37 headless Chrome checks incl. quiz, listen, review, pinyin font, settings, Thai, offline
+node tools/validate_audio.js [--partial]  # audio manifest vs words and files (sha256)
 python3 tools/validate_words.py        # data shape
 python3 tools/check_cedict.py <file>   # Chinese + pinyin vs a local CC-CEDICT file (offline)
 ```

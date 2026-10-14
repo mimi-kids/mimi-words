@@ -1,6 +1,6 @@
 // Mimi service worker: precache everything on install, then serve cache-first (works offline).
 // Bump CACHE when any file changes so clients pick up the new version.
-var CACHE = 'mimi-v10';
+var CACHE = 'mimi-v11';
 var SHELL = [
   './',
   'index.html',
@@ -24,6 +24,15 @@ self.addEventListener('install', function (event) {
         Object.keys(data.category_labels).forEach(function (c) { pics.push(data.category_labels[c].icon); });
         // inline data: pictures (self-drawn color circles) live inside words.json; only files are cached
         return cache.addAll(pics.filter(function (p, i) { return pics.indexOf(p) === i && p.indexOf('data:') !== 0; }));
+      }).then(function () {
+        // pre-generated audio (pilot): cache the manifest and every file it lists; no manifest -> nothing to do
+        return fetch('audio/manifest.json').then(function (r) {
+          if (!r.ok) return null;
+          return r.clone().json().then(function (m) {
+            var files = (m.clips || []).map(function (c) { return c.file; }).filter(Boolean);
+            return cache.put('audio/manifest.json', r).then(function () { return cache.addAll(files); });
+          });
+        }, function () { return null; });
       });
     }).then(function () { return self.skipWaiting(); })
   );

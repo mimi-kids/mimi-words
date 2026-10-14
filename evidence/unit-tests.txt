@@ -1,234 +1,258 @@
-# node --test tests/   (v22.23.3, 2026-10-14T11:26:51Z)
+# node --test tests/   (v22.23.3, 2026-10-14T12:31:17Z)
 TAP version 13
-# Subtest: exactly 100 records
-ok 1 - exactly 100 records
+# Subtest: manifest validator: complete set (100 words x 3 languages) with matching sha256 is valid
+ok 1 - manifest validator: complete set (100 words x 3 languages) with matching sha256 is valid
   ---
-  duration_ms: 1.291016
+  duration_ms: 23.810932
+  type: 'test'
+  ...
+# Subtest: manifest validator: a missing word x language is reported (full mode), tolerated in partial mode
+ok 2 - manifest validator: a missing word x language is reported (full mode), tolerated in partial mode
+  ---
+  duration_ms: 29.274028
+  type: 'test'
+  ...
+# Subtest: manifest validator: a sha256 mismatch is reported
+ok 3 - manifest validator: a sha256 mismatch is reported
+  ---
+  duration_ms: 20.146774
+  type: 'test'
+  ...
+# Subtest: playback chooser: file present -> file, otherwise TTS
+ok 4 - playback chooser: file present -> file, otherwise TTS
+  ---
+  duration_ms: 0.332917
+  type: 'test'
+  ...
+# Subtest: exactly 100 records
+ok 5 - exactly 100 records
+  ---
+  duration_ms: 0.21305
   type: 'test'
   ...
 # Subtest: ids are unique
-ok 2 - ids are unique
+ok 6 - ids are unique
   ---
-  duration_ms: 0.209455
+  duration_ms: 0.169646
   type: 'test'
   ...
 # Subtest: en, zh, pinyin, th are non-empty strings
-ok 3 - en, zh, pinyin, th are non-empty strings
+ok 7 - en, zh, pinyin, th are non-empty strings
   ---
-  duration_ms: 1.177329
+  duration_ms: 0.392467
   type: 'test'
   ...
 # Subtest: pinyin contains a tone mark
-ok 4 - pinyin contains a tone mark
+ok 8 - pinyin contains a tone mark
   ---
-  duration_ms: 0.39626
+  duration_ms: 0.383984
   type: 'test'
   ...
 # Subtest: every picture exists: a picture file, or a self-drawn inline SVG circle for colors
-ok 5 - every picture exists: a picture file, or a self-drawn inline SVG circle for colors
+ok 9 - every picture exists: a picture file, or a self-drawn inline SVG circle for colors
   ---
-  duration_ms: 1.534137
+  duration_ms: 0.871449
   type: 'test'
   ...
 # Subtest: every category is known and has at least 4 words
-ok 6 - every category is known and has at least 4 words
+ok 10 - every category is known and has at least 4 words
   ---
-  duration_ms: 0.278056
+  duration_ms: 0.49055
   type: 'test'
   ...
 # Subtest: nothing is marked reviewed (owner reviews)
-ok 7 - nothing is marked reviewed (owner reviews)
+ok 11 - nothing is marked reviewed (owner reviews)
   ---
-  duration_ms: 0.221398
+  duration_ms: 0.192385
   type: 'test'
   ...
 # Subtest: every word, both languages, 25 seeds: 4 valid options
-ok 8 - every word, both languages, 25 seeds: 4 valid options
+ok 12 - every word, both languages, 25 seeds: 4 valid options
   ---
-  duration_ms: 50.485565
+  duration_ms: 51.440923
   type: 'test'
   ...
 # Subtest: duplicate labels or pictures in the pool are never offered together
-ok 9 - duplicate labels or pictures in the pool are never offered together
+ok 13 - duplicate labels or pictures in the pool are never offered together
   ---
-  duration_ms: 1.190348
+  duration_ms: 0.744857
   type: 'test'
   ...
 # Subtest: too few distinct options throws instead of repeating
-ok 10 - too few distinct options throws instead of repeating
+ok 14 - too few distinct options throws instead of repeating
   ---
-  duration_ms: 1.122504
+  duration_ms: 0.456089
   type: 'test'
   ...
 # Subtest: correct answer position varies (not always first)
-ok 11 - correct answer position varies (not always first)
+ok 15 - correct answer position varies (not always first)
   ---
-  duration_ms: 0.832943
+  duration_ms: 0.657836
   type: 'test'
   ...
 # Subtest: Thai mode: every word, 25 seeds: 4 options with 4 distinct Thai labels
-ok 12 - Thai mode: every word, 25 seeds: 4 options with 4 distinct Thai labels
+ok 16 - Thai mode: every word, 25 seeds: 4 options with 4 distinct Thai labels
   ---
-  duration_ms: 29.59063
+  duration_ms: 30.285962
   type: 'test'
   ...
 # Subtest: save + load round trip with a mocked storage
-ok 13 - save + load round trip with a mocked storage
+ok 17 - save + load round trip with a mocked storage
   ---
-  duration_ms: 1.632368
+  duration_ms: 0.956198
   type: 'test'
   ...
 # Subtest: v1 stars are migrated to v2 progress
-ok 14 - v1 stars are migrated to v2 progress
+ok 18 - v1 stars are migrated to v2 progress
   ---
-  duration_ms: 0.259911
+  duration_ms: 0.248322
   type: 'test'
   ...
 # Subtest: corrupt or missing data gives a clean state
-ok 15 - corrupt or missing data gives a clean state
+ok 19 - corrupt or missing data gives a clean state
   ---
-  duration_ms: 0.202361
+  duration_ms: 0.215482
   type: 'test'
   ...
 # Subtest: storage that throws (private mode) never breaks the app
-ok 16 - storage that throws (private mode) never breaks the app
+ok 20 - storage that throws (private mode) never breaks the app
   ---
-  duration_ms: 0.518613
+  duration_ms: 0.339599
   type: 'test'
   ...
 # Subtest: streak: same day no change, next day +1, gap resets to 1
-ok 17 - streak: same day no change, next day +1, gap resets to 1
+ok 21 - streak: same day no change, next day +1, gap resets to 1
   ---
-  duration_ms: 0.154136
+  duration_ms: 0.325464
   type: 'test'
   ...
 # Subtest: streak crosses month and year boundaries on the local calendar
-ok 18 - streak crosses month and year boundaries on the local calendar
+ok 22 - streak crosses month and year boundaries on the local calendar
   ---
-  duration_ms: 0.124642
+  duration_ms: 0.153032
   type: 'test'
   ...
 # Subtest: current streak shows 0 once a day was missed
-ok 19 - current streak shows 0 once a day was missed
+ok 23 - current streak shows 0 once a day was missed
   ---
-  duration_ms: 0.154198
+  duration_ms: 0.150289
   type: 'test'
   ...
 # Subtest: localDay uses the local calendar date
-ok 20 - localDay uses the local calendar date
+ok 24 - localDay uses the local calendar date
   ---
-  duration_ms: 0.094568
+  duration_ms: 0.090429
   type: 'test'
   ...
 # Subtest: review queue: most-missed first, then least-recently-seen; unseen excluded
-ok 21 - review queue: most-missed first, then least-recently-seen; unseen excluded
+ok 25 - review queue: most-missed first, then least-recently-seen; unseen excluded
   ---
-  duration_ms: 0.268995
+  duration_ms: 0.252927
   type: 'test'
   ...
 # Subtest: review queue: ties broken by id for a stable order
-ok 22 - review queue: ties broken by id for a stable order
+ok 26 - review queue: ties broken by id for a stable order
   ---
-  duration_ms: 0.121887
+  duration_ms: 0.130844
   type: 'test'
   ...
 # Subtest: review queue is per language
-ok 23 - review queue is per language
+ok 27 - review queue is per language
   ---
-  duration_ms: 0.107877
+  duration_ms: 0.113497
   type: 'test'
   ...
 # Subtest: round: missed words first, then unseen/oldest, capped at size
-ok 24 - round: missed words first, then unseen/oldest, capped at size
+ok 28 - round: missed words first, then unseen/oldest, capped at size
   ---
-  duration_ms: 0.161456
+  duration_ms: 0.177598
   type: 'test'
   ...
 # Subtest: recordAnswer updates counts and moves a missed word to the front
-ok 25 - recordAnswer updates counts and moves a missed word to the front
+ok 29 - recordAnswer updates counts and moves a missed word to the front
   ---
-  duration_ms: 0.186052
+  duration_ms: 0.179726
   type: 'test'
   ...
 # Subtest: three learning languages en / zh / th
-ok 26 - three learning languages en / zh / th
+ok 30 - three learning languages en / zh / th
   ---
-  duration_ms: 0.143829
+  duration_ms: 0.122935
   type: 'test'
   ...
 # Subtest: progress and streak are keyed per language (en / zh / th)
-ok 27 - progress and streak are keyed per language (en / zh / th)
+ok 31 - progress and streak are keyed per language (en / zh / th)
   ---
-  duration_ms: 0.129941
+  duration_ms: 0.117162
   type: 'test'
   ...
 # Subtest: Thai can be the saved language
-ok 28 - Thai can be the saved language
+ok 32 - Thai can be the saved language
   ---
-  duration_ms: 0.122245
+  duration_ms: 0.110073
   type: 'test'
   ...
 # Subtest: existing en/zh progress (saved before Thai existed) survives; Thai starts empty
-ok 29 - existing en/zh progress (saved before Thai existed) survives; Thai starts empty
+ok 33 - existing en/zh progress (saved before Thai existed) survives; Thai starts empty
   ---
-  duration_ms: 0.246377
+  duration_ms: 0.197741
   type: 'test'
   ...
 # Subtest: speech constants: rate 0.75, pitch 1.1, volume 1.0, one place
-ok 30 - speech constants: rate 0.75, pitch 1.1, volume 1.0, one place
+ok 34 - speech constants: rate 0.75, pitch 1.1, volume 1.0, one place
   ---
-  duration_ms: 0.118251
+  duration_ms: 0.110078
   type: 'test'
   ...
 # Subtest: empty or missing voice list -> undefined (browser default voice, never silent)
-ok 31 - empty or missing voice list -> undefined (browser default voice, never silent)
+ok 35 - empty or missing voice list -> undefined (browser default voice, never silent)
   ---
-  duration_ms: 0.214086
+  duration_ms: 0.248911
   type: 'test'
   ...
 # Subtest: en: name preference order, then en-US, then any en-*
-ok 32 - en: name preference order, then en-US, then any en-*
+ok 36 - en: name preference order, then en-US, then any en-*
   ---
-  duration_ms: 0.264175
+  duration_ms: 0.282901
   type: 'test'
   ...
 # Subtest: zh: Google 普通话 > Ting-Ting > Tingting > Microsoft Xiaoxiao > zh-CN > zh-*
-ok 33 - zh: Google 普通话 > Ting-Ting > Tingting > Microsoft Xiaoxiao > zh-CN > zh-*
+ok 37 - zh: Google 普通话 > Ting-Ting > Tingting > Microsoft Xiaoxiao > zh-CN > zh-*
   ---
-  duration_ms: 0.148532
+  duration_ms: 0.152642
   type: 'test'
   ...
 # Subtest: th: Google ไทย > Kanya > Microsoft Premwadee > th-TH; no other fallback
-ok 34 - th: Google ไทย > Kanya > Microsoft Premwadee > th-TH; no other fallback
+ok 38 - th: Google ไทย > Kanya > Microsoft Premwadee > th-TH; no other fallback
   ---
-  duration_ms: 0.122166
+  duration_ms: 0.115896
   type: 'test'
   ...
 # Subtest: a preferred name in another language is never chosen
-ok 35 - a preferred name in another language is never chosen
+ok 39 - a preferred name in another language is never chosen
   ---
-  duration_ms: 0.157449
+  duration_ms: 0.116015
   type: 'test'
   ...
 # Subtest: the parent's saved voice wins when it exists for that language; otherwise automatic
-ok 36 - the parent's saved voice wins when it exists for that language; otherwise automatic
+ok 40 - the parent's saved voice wins when it exists for that language; otherwise automatic
   ---
-  duration_ms: 0.113821
+  duration_ms: 0.112228
   type: 'test'
   ...
 # Subtest: settings persist with a mocked storage; bad values fall back to defaults
-ok 37 - settings persist with a mocked storage; bad values fall back to defaults
+ok 41 - settings persist with a mocked storage; bad values fall back to defaults
   ---
-  duration_ms: 0.297581
+  duration_ms: 0.315208
   type: 'test'
   ...
-1..37
-# tests 37
+1..41
+# tests 41
 # suites 0
-# pass 37
+# pass 41
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 187.451768
+# duration_ms 271.574125
 exit=0

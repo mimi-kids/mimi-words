@@ -52,6 +52,23 @@
     window.speechSynthesis.speak(u);
     return true;
   }
+  // Pre-generated audio (pilot): a file listed in audio/manifest.json plays instead of text-to-speech.
+  var audioIdx = L.audioIndex(null);
+  var playing = null;
+  function hasFile(w, lang) { return L.chooseAudio(audioIdx, lang, w.id).kind === 'file'; }
+  function speakWord(w, lang) {
+    var choice = L.chooseAudio(audioIdx, lang, w.id);
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    if (playing) { playing.pause(); playing = null; }
+    if (choice.kind === 'file') {
+      playing = new Audio(choice.src);
+      var p = playing.play();
+      // a missing or unplayable file falls back to text-to-speech, never silent
+      if (p && p.catch) p.catch(function () { speak(L.labelOf(w, lang), lang); });
+      return true;
+    }
+    return speak(L.labelOf(w, lang), lang);
+  }
   if ('speechSynthesis' in window) {
     refreshVoices();
     window.speechSynthesis.addEventListener('voiceschanged', refreshVoices);
@@ -194,9 +211,9 @@
       var replay = el('button', 'round listen speak');
       replay.setAttribute('aria-label', 'ฟังอีกครั้ง / Listen again');
       replay.appendChild(el('span', null, '🔊'));
-      replay.addEventListener('click', function () { speak(label(q.word), state.lang); });
+      replay.addEventListener('click', function () { speakWord(q.word, state.lang); });
       stage.appendChild(replay);
-      if (!canSpeak(state.lang)) {
+      if (!hasFile(q.word, state.lang) && !canSpeak(state.lang)) {
         // No device voice for this language: show the word so the round is still playable.
         stage.appendChild(el('div', 'novoice', '🔇 ' + label(q.word)));
       }
@@ -237,7 +254,7 @@
     } else {
       button.classList.add('wrong', 'shake');
     }
-    speak(label(q.word), state.lang);
+    speakWord(q.word, state.lang);
     var r = round;
     setTimeout(function () { nextQuestion(r); }, ok ? 1300 : 2200);
   }
@@ -291,7 +308,7 @@
     // the Thai helper button is redundant in Thai mode (the word itself is Thai)
     $('card-th').hidden = state.lang === 'th';
     $('card-th').textContent = 'ไทย: ' + w.th;
-    $('novoice').hidden = canSpeak(state.lang);
+    $('novoice').hidden = hasFile(w, state.lang) || canSpeak(state.lang);
     L.recordSeen(state, state.lang, w.id, Date.now());
     save();
   }
@@ -350,6 +367,10 @@
       test.setAttribute('aria-label', 'ฟัง ' + LANG_NAME[lang] + ' / test');
       test.addEventListener('click', function () { speak(SAMPLE[lang], lang); });
       row.appendChild(test);
+      var nFiles = Object.keys(audioIdx[lang] || {}).length;
+      var src = el('span', 'audio-source', nFiles ? 'เสียง: ไฟล์ (' + nFiles + ')' : 'เสียง: TTS');
+      src.id = 'audio-source-' + lang;
+      row.appendChild(src);
       box.appendChild(row);
     });
     var rateRow = el('div', 'set-row');
@@ -401,9 +422,9 @@
     $('card').addEventListener('click', function (e) { if (e.target === $('card')) closeCard(); });
     $('prev').addEventListener('click', function () { renderCard(current.index - 1); });
     $('next').addEventListener('click', function () { renderCard(current.index + 1); });
-    $('speak').addEventListener('click', function () { speak(label(current.list[current.index]), state.lang); });
-    $('card-pic').addEventListener('click', function () { speak(label(current.list[current.index]), state.lang); });
-    $('card-th').addEventListener('click', function () { speak(current.list[current.index].th, 'th'); });
+    $('speak').addEventListener('click', function () { speakWord(current.list[current.index], state.lang); });
+    $('card-pic').addEventListener('click', function () { speakWord(current.list[current.index], state.lang); });
+    $('card-th').addEventListener('click', function () { speakWord(current.list[current.index], 'th'); });
     $('info').addEventListener('click', function () { $('credits').hidden = false; $('credits-close').focus(); });
     $('credits-close').addEventListener('click', function () { $('credits').hidden = true; });
     $('reset').addEventListener('click', function () {
@@ -430,9 +451,13 @@
     setLang(state.lang);
   }
 
+  var manifestP = fetch('audio/manifest.json')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .catch(function () { return null; });           // no audio yet -> text-to-speech only
   fetch('data/words.json')
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function (d) { data = d; start(); })
+    .then(function (d) { data = d; return manifestP; })
+    .then(function (m) { audioIdx = L.audioIndex(m); start(); })
     .catch(function () { view.textContent = '⚠️'; });
 
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
