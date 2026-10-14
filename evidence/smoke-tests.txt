@@ -1,0 +1,28 @@
+# node tools/smoke_test.mjs   (headless Google Chrome 155.0.8059.39, 412x915 viewport, 2026-10-14T08:58:41Z)
+# Desktop headless only: no phone, no audio output verified.
+ok   home shows 6 categories 
+ok   animals grid shows 25 pictures 
+ok   back button visible 
+ok   card opens with English word 
+ok   Thai helper shown 
+ok   Chinese word + tone-marked pinyin 
+ok   next goes to dog 
+ok   stars on seen pictures 
+ok   progress saved per language 
+ok   quiz shows picture + 4 word options 
+ok   right answer turns green 
+ok   next question after a right answer 
+ok   wrong answer shakes and shows the right one 
+ok   listen shows replay button + 4 picture options 
+ok   listen options are 4 different pictures 
+ok   home shows streak 1 
+ok   review tile enabled 
+ok   wrong answer recorded ["animal-bear"]
+ok   review round starts with the missed word 
+ok   review first question = most-missed word 
+ok   service worker active 
+ok   precache has shell + 100 pictures (110 entries)
+ok   offline reload still shows home 
+ok   offline picture served from cache 
+SMOKE PASS (24 checks)
+exit=0

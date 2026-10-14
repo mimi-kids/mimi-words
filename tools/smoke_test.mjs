@@ -78,12 +78,47 @@ try {
   check('next goes to dog', await waitFor("document.getElementById('card-word').textContent === '狗'"));
   await evaluate("document.getElementById('card-close').click()");
   check('stars on seen pictures', await waitFor("document.querySelectorAll('#view .tile .star').length === 2"));
-  const saved = await evaluate("JSON.parse(localStorage.getItem('lingolite.v1'))");
-  check('progress saved per language', saved.lang === 'zh' && saved.seen.zh['animal-cat'] === 1 && saved.seen.en['animal-cat'] === 1);
+  const saved = await evaluate("JSON.parse(localStorage.getItem('lingolite.v2'))");
+  check('progress saved per language', saved.lang === 'zh' && saved.progress.zh['animal-cat'].seen >= 1 && saved.progress.en['animal-cat'].seen >= 1);
+
+  // ---- quiz: picture + 4 word buttons (Chinese now)
+  const correctId = "fetch('data/words.json').then(r => r.json()).then(d => d.words.find(w => w.icon === new URL(document.querySelector('.stage img').src).pathname.slice(1)).id)";
+  await evaluate("document.querySelectorAll('.modes .mode')[1].click()");
+  check('quiz shows picture + 4 word options', await waitFor("document.querySelectorAll('.opt').length === 4 && !!document.querySelector('.stage img') && document.querySelector('.progress').textContent === '1 / 10'"));
+  const id1 = await evaluate(correctId);
+  await evaluate(`document.querySelector('.opt[data-id="${id1}"]').click()`);
+  check('right answer turns green', await evaluate(`document.querySelector('.opt[data-id="${id1}"]').classList.contains('right')`));
+  await sleep(300); await shot('5-quiz-right');
+  check('next question after a right answer', await waitFor("document.querySelector('.progress') && document.querySelector('.progress').textContent === '2 / 10'", 4000));
+  const id2 = await evaluate(correctId);
+  await evaluate(`[...document.querySelectorAll('.opt')].find(b => b.dataset.id !== '${id2}').click()`);
+  check('wrong answer shakes and shows the right one', await evaluate(`!!document.querySelector('.opt.wrong.shake') && document.querySelector('.opt[data-id="${id2}"]').classList.contains('right')`));
+  await sleep(200); await shot('6-quiz-wrong');
+
+  // ---- listen: 🔊 + 4 pictures
+  await evaluate("document.querySelectorAll('.modes .mode')[2].click()");
+  check('listen shows replay button + 4 picture options', await waitFor("!!document.querySelector('.stage .listen') && document.querySelectorAll('.opt.picopt img').length === 4"));
+  const pics = await evaluate("[...document.querySelectorAll('.opt.picopt img')].map(i => i.src)");
+  check('listen options are 4 different pictures', new Set(pics).size === 4);
+  await sleep(300); await shot('7-listen');
+
+  // ---- home: streak + review tile running Quiz over the queue
+  await evaluate("document.getElementById('back').click()");
+  await evaluate("document.getElementById('back').click()");
+  check('home shows streak 1', await waitFor("document.querySelector('.streak') && document.querySelector('.streak').textContent === '🔥 1'"));
+  check('review tile enabled', await evaluate("!document.querySelector('.review').disabled"));
+  const saved2 = await evaluate("JSON.parse(localStorage.getItem('lingolite.v2'))");
+  const missed = Object.entries(saved2.progress.zh).filter(([, e]) => e.wrong > 0).map(([k]) => k);
+  check('wrong answer recorded', missed.length === 1, JSON.stringify(missed));
+  await sleep(200); await shot('8-home-review');
+  await evaluate("document.querySelector('.review').click()");
+  check('review round starts with the missed word', await waitFor("document.querySelectorAll('.opt').length === 4 && !document.querySelector('.modes')"));
+  check('review first question = most-missed word', (await evaluate(correctId)) === missed[0]);
+  await evaluate("document.getElementById('back').click()");
 
   check('service worker active', await waitFor("navigator.serviceWorker.ready.then(r => !!r.active)", 15000));
-  const cached = await evaluate("caches.open('lingolite-v1').then(c => c.keys()).then(k => k.length)");
-  check('precache has shell + 100 pictures', cached >= 109, `(${cached} entries)`);
+  const cached = await evaluate("caches.open('lingolite-v5').then(c => c.keys()).then(k => k.length)");
+  check('precache has shell + 100 pictures', cached >= 110, `(${cached} entries)`);
 
   await cdp('Network.emulateNetworkConditions', { offline: true, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });
   await cdp('Page.reload', { ignoreCache: false });
